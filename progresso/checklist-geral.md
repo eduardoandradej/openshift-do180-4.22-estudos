@@ -113,8 +113,13 @@ escrito) está em [estado-do-projeto.md](estado-do-projeto.md).
 - [ ] REVISAO.md
 - [ ] RESUMO.md
 
-## Capítulo 8 — Comprehensive Review (conteúdo pendente)
-- [ ] 8.1 · [ ] 8.2 Lab · [ ] 8.3 Lab
+## Capítulo 8 — Comprehensive Review
+- [ ] 8.1 Summary of Learning Objectives
+- [ ] Simulado A (REVISAO.md)
+- [ ] Simulado B (REVISAO.md)
+- [ ] 8.2 Lab `compreview-deploy` (`lab grade`, 35 min)
+- [ ] 8.3 Lab `compreview-scale` (`lab grade`, 20 min)
+- [ ] RESUMO.md
 
 ---
 [Início](../README.md)

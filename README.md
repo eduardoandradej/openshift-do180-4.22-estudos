@@ -46,9 +46,9 @@ flowchart LR
 | [Capítulo 5](capitulos/05-configuracao-e-storage/README.md) | Manage Storage for Application Configuration and Data | ✅ |
 | [Capítulo 6](capitulos/06-confiabilidade/README.md) | Configure Applications for Reliability | ✅ |
 | [Capítulo 7](capitulos/07-atualizacao-aplicacoes/README.md) | Manage Application Updates | ✅ |
-| [Capítulo 8](capitulos/08-revisao-geral/README.md) | Comprehensive Review | ⏳ |
+| [Capítulo 8](capitulos/08-revisao-geral/README.md) | Comprehensive Review | ✅ |
 
-Legenda: ✅ concluído · 🟡 parcial · ⏳ aguardando o PDF do capítulo (metodologia: um capítulo por vez).
+Legenda: ✅ concluído. Todos os capítulos do DO180 4.22 estão desenvolvidos e validados.
 
 ## Consulta rápida
 
@@ -71,7 +71,7 @@ Legenda: ✅ concluído · 🟡 parcial · ⏳ aguardando o PDF do capítulo (me
 - [ ] Capítulo 5
 - [ ] Capítulo 6
 - [ ] Capítulo 7
-- [ ] Capítulo 8 — revisão integrada
+- [ ] Capítulo 8 — revisão integrada (simulados + labs 8.2 e 8.3)
 
 > Marque aqui quando **você** concluir o estudo. O checklist detalhado está em
 > [progresso/checklist-geral.md](progresso/checklist-geral.md).

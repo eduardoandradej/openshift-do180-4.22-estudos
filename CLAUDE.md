@@ -68,8 +68,11 @@ Cada capítulo em `capitulos/NN-nome/` contém:
 ## 6. Metodologia incremental (decisão do usuário)
 
 - **Um capítulo por vez.** Cada capítulo é fornecido em PDF separado. Não antecipar
-  capítulos cujo PDF ainda não foi recebido: os READMEs dos capítulos 2–8 contêm
-  apenas o índice oficial.
+  capítulos cujo PDF ainda não foi recebido. (Status: os capítulos 0 a 8 do DO180
+  4.22 já foram recebidos e desenvolvidos; a mesma metodologia vale para revisões
+  futuras e para um eventual repositório do DO280.)
+- **Publicação:** por decisão do usuário, o conteúdo validado vai direto para o
+  branch `main` (material de estudo, sem deploy).
 - Antes de iniciar um capítulo: ler este arquivo, `progresso/estado-do-projeto.md`,
   a estrutura existente e os capítulos concluídos. Preservar padrão, navegação e links.
 - Não recriar nem sobrescrever conteúdo anterior sem necessidade comprovada.

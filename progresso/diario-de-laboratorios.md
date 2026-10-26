@@ -11,7 +11,7 @@ credenciais.
 - **Data:** AAAA-MM-DD
 - **Status:** ✅ concluído | 🔁 repetir | ❌ não concluído
 - **lab grade:** PASS | FAIL (critérios: ...) | não se aplica
-- **Tempo gasto:**
+- **Tempo gasto:** (nos labs do Cap. 8, compare com o tempo de referência)
 - **Dificuldades:**
 - **Erros encontrados (mensagem e contexto):**
 - **Solução aprendida:**
@@ -55,6 +55,8 @@ credenciais.
 | 7.6 | GE `updates-imagestreams` | | | |
 | 7.8 | GE `updates-triggers` | | | |
 | 7.9 | Lab `updates-review` (grade) | | | |
+| 8.2 | Lab `compreview-deploy` (grade, ref. 35 min) | | | |
+| 8.3 | Lab `compreview-scale` (grade, ref. 20 min) | | | |
 
 ## Entradas
 

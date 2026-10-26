@@ -112,9 +112,23 @@
 | Criar e usar ImageStreams e ImageStreamTags | [7.5](../capitulos/07-atualizacao-aplicacoes/7.5-implantacoes-reproduziveis-com-imagestreams.md) | Atualizações de aplicações (🔎) |
 | Configurar image triggers e promover/reverter com aliases | [7.7](../capitulos/07-atualizacao-aplicacoes/7.7-triggers-de-mudanca-de-imagem.md) | Atualizações de aplicações (🔎) |
 
-## 10. Competências do próximo capítulo
+## 10. Capítulo 8 — revisão integrada (✅ confirmada no PDF)
 
-Serão adicionadas aqui à medida que cada PDF for recebido e cada capítulo validado.
+O curso declara que a revisão do Capítulo 8 apoia a preparação para os exames
+**EX180** e **EX280** (PDF p. 495). Os dois labs cobram, por especificação e com
+tempo, as competências dos capítulos 4 a 7 (e a observação dos capítulos 1 e 2).
+Treino autoral equivalente em [REVISAO.md do Capítulo 8](../capitulos/08-revisao-geral/REVISAO.md).
+
+## 11. Lacunas para o EX280 (cobertas no DO280)
+
+| Área | Situação após o DO180 |
+|------|-----------------------|
+| Provedores de identidade, usuários e grupos | Não coberto |
+| RBAC (roles, bindings) | Não coberto |
+| SCC e service accounts | Apenas mencionado (Cap. 3) |
+| NetworkPolicy e TLS em Routes | Routes básicas apenas (Cap. 4) |
+| Quotas, LimitRanges e templates de projeto | LimitRange apenas mencionado (Cap. 6) |
+| Operators (OLM) | Apenas conceito e consulta (Caps. 1 e 2) |
 
 ---
 [Início](../README.md) | [Estado do projeto](estado-do-projeto.md)

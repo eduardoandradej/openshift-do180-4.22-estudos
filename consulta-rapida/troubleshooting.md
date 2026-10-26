@@ -1,6 +1,20 @@
 # Troubleshooting: sintoma → causa → verificação
 
-> Cobertura atual: fundamentos e Capítulos 1–7.
+> Cobertura: fundamentos e Capítulos 1–8 (curso completo).
+
+## Roteiro geral
+
+```mermaid
+flowchart TD
+    A[oc get pods] --> B{STATUS}
+    B -- Pending --> C[oc describe pod<br/>FailedScheduling? PVC?]
+    B -- ImagePullBackOff --> D[nome/tag/credencial<br/>skopeo list-tags]
+    B -- CrashLoopBackOff --> E[oc logs --previous<br/>env? root? OOMKilled?]
+    B -- Running 0/1 --> F[readiness<br/>oc describe pod]
+    B -- Running 1/1 --> G{Acesso falha?}
+    G -- sim --> H[endpointslices → Service → Route]
+    G -- não --> I[aplicação: logs, exec, port-forward]
+```
 
 ## Acesso e CLI
 
@@ -106,7 +120,7 @@
 | `oc rollout undo` desfeito | Image trigger reaplica a imagem da tag | Reverter a istag/alias |
 | Disco de imagens cheio no nó | GC só age acima de 85% | `crictl imagefsinfo`; `KubeletConfig` |
 
-## Aplicações (prévia)
+## Sintomas gerais de aplicações (visão rápida)
 
 | Sintoma | Causa provável | Como verificar |
 |---------|----------------|----------------|

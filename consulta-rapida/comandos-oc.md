@@ -1,6 +1,6 @@
 # Comandos `oc` por tarefa
 
-> Cobertura atual: fundamentos e Capítulos 1–7. Ampliada a cada capítulo.
+> Cobertura: fundamentos e Capítulos 1–8 (curso completo).
 > Coluna **Perm.**: 👤 qualquer usuário autenticado · 🛡️ administrador do cluster.
 
 ## Sessão e contexto
@@ -237,7 +237,7 @@
 | `oc set triggers deployment/<d> --from-image <is:tag> --containers <c>` | Image trigger |
 | `oc set triggers deployment/<d> [--auto\|--manual\|--remove-all]` | Ver/ligar/desligar triggers |
 
-## Aplicações (prévia)
+## Comandos gerais de aplicação
 
 | Comando | Para quê |
 |---------|----------|

@@ -4,7 +4,7 @@
 > Atualize este arquivo ao concluir cada capítulo. As regras permanentes ficam no
 > [CLAUDE.md](../CLAUDE.md).
 
-**Última atualização:** 2026-10-26 (Capítulo 7 concluído)
+**Última atualização:** 2026-10-26 (Capítulo 8 concluído; curso completo e consolidado)
 
 ## Situação por módulo
 
@@ -20,8 +20,8 @@
 | Capítulo 5 | ✅ validado | p. 293–376 | 4 lições + prática, revisão, resumo (sem quiz) |
 | Capítulo 6 | ✅ validado | p. 377–436 | 5 lições + prática, revisão, resumo |
 | Capítulo 7 | ✅ validado | p. 437–494 | 4 lições + prática, revisão, resumo (sem quiz) |
-| Capítulo 8 | ⏳ | não | Só o índice oficial |
-| consulta-rapida | 🟡 | — | Cobre fundamentos + Caps. 1–7; ampliar a cada capítulo |
+| Capítulo 8 | ✅ validado | p. 495–513 | Lição 8.1, prática (2 labs), 2 simulados autorais, resumo final |
+| consulta-rapida | ✅ | — | Cobre fundamentos + Caps. 1–8 |
 | Mapa EX280 | 🟡 | — | Objetivos públicos a conferir na página oficial do exame |
 
 ## Fatos verificados no PDF
@@ -29,6 +29,7 @@
 - Material: `DO180-RHOCP4.22-en-1-20260730`, edição 1 (2026-07-30), 513 páginas.
 - Cluster de laboratório: OpenShift 4.22, nó único `master01`, bare metal UPI, domínio `lab.example.com`.
 - Comando `lab`: `start`/`finish` em todas as atividades; `grade` só em labs de fim de capítulo e comprehensive reviews.
+- Capítulo 8: 8.1 (p. 496–497), 8.2 Lab `compreview-deploy` (p. 498–506, **com** `lab grade`, 35 min), 8.3 Lab `compreview-scale` (p. 507–512, **com** `lab grade`, 20 min), 8.4 Summary (p. 513). O curso cita EX180 e EX280 como exames apoiados pela revisão.
 - Capítulo 7: 7.1 (p. 438–444), 7.2 GE `updates-ids` (p. 445–452), 7.3 (p. 453–460), 7.4 GE `updates-rollout` (p. 461–466), 7.5 (p. 467–476), 7.6 GE `updates-imagestreams` (p. 477–479), 7.7 (p. 480–484), 7.8 GE `updates-triggers` (p. 485–488), 7.9 Lab `updates-review` (p. 489–493, **com** `lab grade`), 7.10 Summary (p. 494). Sem quiz.
 - Capítulo 6: 6.1 (p. 378–379), 6.2 GE `reliability-ha` (p. 380–385), 6.3 (p. 386–390), 6.4 GE `reliability-probes` (p. 391–396), 6.5 (p. 397–400), 6.6 GE `reliability-requests` (p. 401–404), 6.7 (p. 405–411), 6.8 GE `reliability-limits` (p. 412–414), 6.9 (p. 415–419), 6.10 GE `reliability-autoscaling` (p. 420–425), 6.11 Lab `reliability-review` (p. 426–433, **com** `lab grade`), 6.12 Quiz (p. 434–435), 6.13 Summary (p. 436).
 - Capítulo 5: 5.1 (p. 294–306), 5.2 GE `storage-configs` (p. 307–316), 5.3 (p. 317–327), 5.4 GE `storage-volumes` (p. 328–335), 5.5 (p. 336–341), 5.6 GE `storage-classes` (p. 342–348), 5.7 (p. 349–355), 5.8 GE `storage-statefulsets` (p. 356–362), 5.9 Lab `storage-review` (p. 363–375, **com** `lab grade`), 5.10 Summary (p. 376). Sem quiz.
@@ -42,6 +43,20 @@
 ## Fluxo de publicação
 
 Por decisão do usuário, o conteúdo é publicado direto no branch `main` (material de estudo, sem deploy).
+
+## Consolidação final (Fase 5)
+
+- [x] Todos os 8 capítulos com lições, prática oficial, revisão e resumo.
+- [x] Revisão integrada autoral (dois simulados cronometrados com cenário próprio).
+- [x] Consulta rápida sem seções "prévia"; roteiro geral de troubleshooting.
+- [x] Links e âncoras de todo o repositório verificados por script.
+- [x] Busca por senhas, e-mail, marca d'água e valores de labs: nada encontrado.
+
+## Validação do Capítulo 8
+
+- [x] Seções 8.1–8.4 representadas, na ordem.
+- [x] Identificadores `compreview-deploy` e `compreview-scale` e `lab grade` conferidos; tempos de referência registrados.
+- [x] Especificações, valores e soluções oficiais não reproduzidos; simulados usam cenário original.
 
 ## Validação do Capítulo 7
 
@@ -112,4 +127,8 @@ Por decisão do usuário, o conteúdo é publicado direto no branch `main` (mate
 
 ## Próximo passo
 
-Aguardar o PDF do **Capítulo 8 — Comprehensive Review**. Ao concluí-lo, fazer a consolidação final (Fase 5): revisão integrada, conferência de todos os links, mapa EX280 e checklist.
+O DO180 4.22 está completo. Próximas ações possíveis, a critério do usuário:
+
+1. Conferir os objetivos públicos atuais do EX280 e atualizar o mapa (seção 2 de `objetivos-de-aprendizagem.md`).
+2. Iniciar um repositório equivalente para o **DO280**, reaproveitando `modelos/` e `CLAUDE.md`.
+3. Revisões pontuais a partir das anotações em `dificuldades-identificadas.md`.
