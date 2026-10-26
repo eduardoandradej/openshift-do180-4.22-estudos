@@ -3,6 +3,7 @@
 | Termo | Definição |
 |-------|-----------|
 | **Alert** | Notificação gerada quando uma métrica deixa de atender a uma condição definida |
+| **Alias (istag)** | ImageStreamTag que segue outra tag (`oc tag --alias`) |
 | **Allocatable** | Parte da capacidade de um nó disponível para Pods, após reservas do sistema |
 | **API Explorer** | Página da console que cataloga os tipos de recurso do cluster |
 | **binaryData** | Campo do ConfigMap para conteúdo binário em base64 |
@@ -35,12 +36,17 @@
 | **ExternalName** | Tipo de Service que responde um CNAME para um nome externo |
 | **FailedScheduling** | Evento de Pod que nenhum nó pôde receber |
 | **Floating tag** | Tag que é apelido de outra e muda a cada novo build (ex.: `latest`) |
+| **Garbage collector de imagens** | Rotina do kubelet que remove imagens não usadas (85% → 80%) |
 | **Gateway API** | Framework de entrada de tráfego com GatewayClass, Gateway e HTTPRoute |
 | **Headless Service** | Service com `clusterIP: None`; o DNS devolve os IPs dos Pods |
 | **Hosted control plane** | Control plane executado como Pods em um cluster de hospedagem |
 | **hostPath** | Volume que monta um caminho do nó; exige Pod privilegiado |
 | **HPA** | Horizontal Pod Autoscaler: ajusta o número de réplicas por métricas |
 | **Image** | Pacote imutável em camadas a partir do qual containers são criados |
+| **Image trigger** | Configuração que faz um workload seguir uma ImageStreamTag (`oc set triggers`) |
+| **imagePullPolicy** | Quando o nó baixa a imagem: `IfNotPresent`, `Always`, `Never` |
+| **ImageStream** | Recurso OpenShift com nomes curtos estáveis, digests e histórico de imagens |
+| **ImageStreamTag** | Tag de uma ImageStream que aponta para um digest e guarda histórico |
 | **In-place pod resize** | Ajuste de CPU/memória de um Pod em execução sem reiniciá-lo (Kubernetes 1.35 / OCP 4.22) |
 | **Ingress** | Recurso Kubernetes de exposição HTTP(S); no OpenShift gera uma Route gerenciada |
 | **Insights Operator** | Envia dados do cluster para análise do Lightspeed advisor |
@@ -51,8 +57,11 @@
 | **Lightspeed advisor** | Serviço no Hybrid Cloud Console que recomenda correções para o cluster |
 | **Limit** | Teto de CPU/memória de um container |
 | **Liveness probe** | Teste que reinicia o container quando falha |
+| **Lookup local** | Permite usar uma ImageStream pelo nome curto no projeto (`oc set image-lookup`) |
 | **Machine** | Recurso OpenShift que descreve um nó do cluster |
 | **MachineConfig / MCO** | Configuração declarada do SO dos nós / operador que a aplica e mantém |
+| **Manifest list** | Índice de uma imagem multiarquitetura, com uma imagem por plataforma |
+| **maxSurge / maxUnavailable** | Pods extras / indisponíveis permitidos num RollingUpdate |
 | **Millicore** | Milésimo de um núcleo de CPU (`1000m` = 1 CPU) |
 | **must-gather** | `oc adm must-gather`: coleta definições e logs do cluster para o suporte |
 | **Namespace** | Divisão lógica de recursos e base de permissões |
@@ -71,14 +80,18 @@
 | **Port forwarding** | Túnel temporário de uma porta local até a porta de um Pod (`oc port-forward`) |
 | **Project** | Namespace com metadados adicionais no OpenShift |
 | **PSA** | Pod Security Admission: perfis `privileged`, `baseline`, `restricted` por namespace |
+| **Pull-through** | Cache de camadas no registry interno (`--reference-policy local`) |
 | **PV / PVC** | Storage real (cluster) / pedido de storage (namespace) |
 | **QoS class** | Guaranteed, Burstable ou BestEffort, conforme requests e limits |
 | **Readiness probe** | Teste que decide se o Pod recebe tráfego |
 | **Reclaim policy** | O que acontece com o PV após o PVC ser apagado: `Retain` ou `Delete` |
+| **Recreate** | Estratégia que para todas as instâncias antes de subir as novas |
 | **Registry** | Servidor que armazena e distribui imagens |
 | **Request** | Reserva mínima de CPU/memória usada no agendamento |
 | **restartPolicy** | Política de reinício de containers de um Pod: `Always`, `OnFailure`, `Never` |
 | **RHEL CoreOS** | SO imutável dos nós do OpenShift, gerenciado pelo cluster |
+| **Rollback** | Volta a uma revisão anterior (`oc rollout undo` ou revertendo a istag) |
+| **RollingUpdate** | Estratégia padrão que troca instâncias aos poucos, sem indisponibilidade |
 | **Route** | Exposição externa de um Service por hostname (OpenShift) |
 | **RWOP** | ReadWriteOncePod: leitura e escrita por um único Pod |
 | **S2I** | Source-to-Image: gera imagem a partir do código-fonte |

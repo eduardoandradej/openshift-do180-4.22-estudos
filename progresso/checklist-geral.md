@@ -100,8 +100,18 @@ escrito) está em [estado-do-projeto.md](estado-do-projeto.md).
 - [ ] REVISAO.md
 - [ ] RESUMO.md
 
-## Capítulo 7 — Manage Application Updates (conteúdo pendente)
-- [ ] 7.1 · [ ] 7.2 GE · [ ] 7.3 · [ ] 7.4 GE · [ ] 7.5 · [ ] 7.6 GE · [ ] 7.7 · [ ] 7.8 GE · [ ] 7.9 Lab
+## Capítulo 7 — Manage Application Updates
+- [ ] 7.1 Container Image Identity and Tags
+- [ ] 7.2 GE `updates-ids`
+- [ ] 7.3 Update Application Image and Settings
+- [ ] 7.4 GE `updates-rollout`
+- [ ] 7.5 Reproducible Deployments with OpenShift Image Streams
+- [ ] 7.6 GE `updates-imagestreams`
+- [ ] 7.7 Automatic Image Updates with OpenShift Image Change Triggers
+- [ ] 7.8 GE `updates-triggers`
+- [ ] 7.9 Lab `updates-review` (`lab grade`)
+- [ ] REVISAO.md
+- [ ] RESUMO.md
 
 ## Capítulo 8 — Comprehensive Review (conteúdo pendente)
 - [ ] 8.1 · [ ] 8.2 Lab · [ ] 8.3 Lab

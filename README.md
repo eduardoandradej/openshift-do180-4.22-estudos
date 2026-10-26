@@ -45,7 +45,7 @@ flowchart LR
 | [Capítulo 4](capitulos/04-deploy-e-redes/README.md) | Deploy Managed and Networked Applications on Kubernetes | ✅ |
 | [Capítulo 5](capitulos/05-configuracao-e-storage/README.md) | Manage Storage for Application Configuration and Data | ✅ |
 | [Capítulo 6](capitulos/06-confiabilidade/README.md) | Configure Applications for Reliability | ✅ |
-| [Capítulo 7](capitulos/07-atualizacao-aplicacoes/README.md) | Manage Application Updates | ⏳ |
+| [Capítulo 7](capitulos/07-atualizacao-aplicacoes/README.md) | Manage Application Updates | ✅ |
 | [Capítulo 8](capitulos/08-revisao-geral/README.md) | Comprehensive Review | ⏳ |
 
 Legenda: ✅ concluído · 🟡 parcial · ⏳ aguardando o PDF do capítulo (metodologia: um capítulo por vez).

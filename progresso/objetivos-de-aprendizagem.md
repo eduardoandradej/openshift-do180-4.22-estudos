@@ -103,7 +103,16 @@
 | Definir limits, diagnosticar `OOMKilled`/throttling, redimensionar no local | [6.7](../capitulos/06-confiabilidade/6.7-limitar-capacidade-de-computacao.md) | Confiabilidade (🔎) |
 | Criar e acompanhar HPA (CPU e memória); conhecer o VPA | [6.9](../capitulos/06-confiabilidade/6.9-autoscaling-de-aplicacoes.md) | Confiabilidade (🔎) |
 
-## 9. Competências dos próximos capítulos
+## 9. Competências do Capítulo 7 (✅ confirmadas no PDF)
+
+| Competência | Lição | Relevância para EX280 |
+|-------------|-------|-----------------------|
+| Relacionar tags e digests; escolher `imagePullPolicy` | [7.1](../capitulos/07-atualizacao-aplicacoes/7.1-identidade-e-tags-de-imagens.md) | Atualizações de aplicações (🔎) |
+| Atualizar imagem e configuração com estratégias, pause/resume e rollback | [7.3](../capitulos/07-atualizacao-aplicacoes/7.3-atualizar-imagem-e-configuracoes.md) | Atualizações de aplicações (🔎) |
+| Criar e usar ImageStreams e ImageStreamTags | [7.5](../capitulos/07-atualizacao-aplicacoes/7.5-implantacoes-reproduziveis-com-imagestreams.md) | Atualizações de aplicações (🔎) |
+| Configurar image triggers e promover/reverter com aliases | [7.7](../capitulos/07-atualizacao-aplicacoes/7.7-triggers-de-mudanca-de-imagem.md) | Atualizações de aplicações (🔎) |
+
+## 10. Competências do próximo capítulo
 
 Serão adicionadas aqui à medida que cada PDF for recebido e cada capítulo validado.
 

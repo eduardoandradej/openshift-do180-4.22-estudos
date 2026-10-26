@@ -50,6 +50,11 @@ credenciais.
 | 6.8 | GE `reliability-limits` | | | |
 | 6.10 | GE `reliability-autoscaling` | | | |
 | 6.11 | Lab `reliability-review` (grade) + Quiz 6.12 | | | |
+| 7.2 | GE `updates-ids` | | | |
+| 7.4 | GE `updates-rollout` | | | |
+| 7.6 | GE `updates-imagestreams` | | | |
+| 7.8 | GE `updates-triggers` | | | |
+| 7.9 | Lab `updates-review` (grade) | | | |
 
 ## Entradas
 

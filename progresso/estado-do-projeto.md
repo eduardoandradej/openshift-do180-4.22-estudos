@@ -4,7 +4,7 @@
 > Atualize este arquivo ao concluir cada capítulo. As regras permanentes ficam no
 > [CLAUDE.md](../CLAUDE.md).
 
-**Última atualização:** 2026-10-26 (Capítulo 6 concluído)
+**Última atualização:** 2026-10-26 (Capítulo 7 concluído)
 
 ## Situação por módulo
 
@@ -19,9 +19,9 @@
 | Capítulo 4 | ✅ validado | p. 227–292 | 4 lições + prática, revisão, resumo (sem quiz) |
 | Capítulo 5 | ✅ validado | p. 293–376 | 4 lições + prática, revisão, resumo (sem quiz) |
 | Capítulo 6 | ✅ validado | p. 377–436 | 5 lições + prática, revisão, resumo |
-| Capítulo 7 | ⏳ | não | Só o índice oficial |
+| Capítulo 7 | ✅ validado | p. 437–494 | 4 lições + prática, revisão, resumo (sem quiz) |
 | Capítulo 8 | ⏳ | não | Só o índice oficial |
-| consulta-rapida | 🟡 | — | Cobre fundamentos + Caps. 1–6; ampliar a cada capítulo |
+| consulta-rapida | 🟡 | — | Cobre fundamentos + Caps. 1–7; ampliar a cada capítulo |
 | Mapa EX280 | 🟡 | — | Objetivos públicos a conferir na página oficial do exame |
 
 ## Fatos verificados no PDF
@@ -29,6 +29,7 @@
 - Material: `DO180-RHOCP4.22-en-1-20260730`, edição 1 (2026-07-30), 513 páginas.
 - Cluster de laboratório: OpenShift 4.22, nó único `master01`, bare metal UPI, domínio `lab.example.com`.
 - Comando `lab`: `start`/`finish` em todas as atividades; `grade` só em labs de fim de capítulo e comprehensive reviews.
+- Capítulo 7: 7.1 (p. 438–444), 7.2 GE `updates-ids` (p. 445–452), 7.3 (p. 453–460), 7.4 GE `updates-rollout` (p. 461–466), 7.5 (p. 467–476), 7.6 GE `updates-imagestreams` (p. 477–479), 7.7 (p. 480–484), 7.8 GE `updates-triggers` (p. 485–488), 7.9 Lab `updates-review` (p. 489–493, **com** `lab grade`), 7.10 Summary (p. 494). Sem quiz.
 - Capítulo 6: 6.1 (p. 378–379), 6.2 GE `reliability-ha` (p. 380–385), 6.3 (p. 386–390), 6.4 GE `reliability-probes` (p. 391–396), 6.5 (p. 397–400), 6.6 GE `reliability-requests` (p. 401–404), 6.7 (p. 405–411), 6.8 GE `reliability-limits` (p. 412–414), 6.9 (p. 415–419), 6.10 GE `reliability-autoscaling` (p. 420–425), 6.11 Lab `reliability-review` (p. 426–433, **com** `lab grade`), 6.12 Quiz (p. 434–435), 6.13 Summary (p. 436).
 - Capítulo 5: 5.1 (p. 294–306), 5.2 GE `storage-configs` (p. 307–316), 5.3 (p. 317–327), 5.4 GE `storage-volumes` (p. 328–335), 5.5 (p. 336–341), 5.6 GE `storage-classes` (p. 342–348), 5.7 (p. 349–355), 5.8 GE `storage-statefulsets` (p. 356–362), 5.9 Lab `storage-review` (p. 363–375, **com** `lab grade`), 5.10 Summary (p. 376). Sem quiz.
 - StorageClasses do laboratório: `nfs-storage` (padrão, arquivo) e `lvms-vg1` (LVM local, bloco).
@@ -41,6 +42,13 @@
 ## Fluxo de publicação
 
 Por decisão do usuário, o conteúdo é publicado direto no branch `main` (material de estudo, sem deploy).
+
+## Validação do Capítulo 7
+
+- [x] Seções 7.1–7.10 representadas, na ordem; ausência de quiz registrada.
+- [x] Identificadores `updates-ids`, `updates-rollout`, `updates-imagestreams`, `updates-triggers`, `updates-review` e `lab grade` (só no 7.9) conferidos.
+- [x] Complementos marcados como fonte externa: padrões `maxSurge`/`maxUnavailable` (25%), arredondamentos, `ProgressDeadlineExceeded`; comportamento de `oc rollout undo` com trigger ativo descrito com cautela.
+- [x] YAML validado; links e âncoras verificados.
 
 ## Validação do Capítulo 6
 
@@ -98,11 +106,10 @@ Por decisão do usuário, o conteúdo é publicado direto no branch `main` (mate
 | Conferir objetivos públicos do EX280 e atualizar `objetivos-de-aprendizagem.md` | Antes do Cap. 8 |
 | Ampliar `consulta-rapida` com o conteúdo de cada capítulo | A cada capítulo |
 | SCC e RBAC em profundidade (citados nos Caps. 2 e 3) | DO280 |
-| Rollout, estratégias e rollback de Deployments | Cap. 7 |
 | LimitRange e ResourceQuota (citados em 6.9) | DO280 |
 | TLS em Routes (edge, passthrough, re-encrypt) em profundidade | DO280 |
 | Criptografia do etcd e RBAC sobre Secrets | DO280 |
 
 ## Próximo passo
 
-Aguardar o PDF do **Capítulo 7 — Manage Application Updates**.
+Aguardar o PDF do **Capítulo 8 — Comprehensive Review**. Ao concluí-lo, fazer a consolidação final (Fase 5): revisão integrada, conferência de todos os links, mapa EX280 e checklist.

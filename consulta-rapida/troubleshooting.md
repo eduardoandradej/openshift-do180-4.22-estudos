@@ -1,6 +1,6 @@
 # Troubleshooting: sintoma → causa → verificação
 
-> Cobertura atual: fundamentos e Capítulos 1–6.
+> Cobertura atual: fundamentos e Capítulos 1–7.
 
 ## Acesso e CLI
 
@@ -89,6 +89,22 @@
 | HPA `<unknown>` persistente | Sem request para a métrica | `oc set resources --requests` |
 | HPA não passa de N réplicas | `maxReplicas` ou falta de capacidade | `oc describe hpa`; Pods `Pending` |
 | Valor de resize "sumiu" | Novo Pod criado a partir do template | Atualizar o Deployment |
+
+## Atualizações ([7.1](../capitulos/07-atualizacao-aplicacoes/7.1-identidade-e-tags-de-imagens.md)–[7.7](../capitulos/07-atualizacao-aplicacoes/7.7-triggers-de-mudanca-de-imagem.md))
+
+| Sintoma | Causa provável | Como verificar |
+|---------|----------------|----------------|
+| Réplicas com `imageID` diferentes | Tag flutuante + `IfNotPresent` | `.status.containerStatuses[].imageID`; usar digest/ImageStream |
+| `oc image info`: *manifest list* | Imagem multiarquitetura | `--filter-by-os linux/amd64` |
+| Rollout parado / `ProgressDeadlineExceeded` | Imagem errada, readiness falhando | `oc rollout status`; `oc get pods`; `oc rollout undo` |
+| Erros durante rollout | Sem readiness | `oc set probe --readiness` |
+| Vários rollouts para várias mudanças | Trigger de configuração ativo | `oc rollout pause` / `resume` |
+| Rollback trouxe imagem diferente | Tag flutuante mudou no registry | Usar digest ou ImageStream |
+| Nome curto em `ImagePullBackOff` | Sem lookup local ou IS em outro projeto | `oc set image-lookup` |
+| istag não recebe imagem nova da origem | Sem `--scheduled` (padrão) | `oc tag ... --scheduled` ou atualizar manualmente |
+| Tag mudou e Deployment não | Sem trigger, `--manual` ou Deployment pausado | `oc set triggers deployment/<d>` |
+| `oc rollout undo` desfeito | Image trigger reaplica a imagem da tag | Reverter a istag/alias |
+| Disco de imagens cheio no nó | GC só age acima de 85% | `crictl imagefsinfo`; `KubeletConfig` |
 
 ## Aplicações (prévia)
 

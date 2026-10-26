@@ -1,6 +1,6 @@
 # Comandos `oc` por tarefa
 
-> Cobertura atual: fundamentos e Capítulos 1–6. Ampliada a cada capítulo.
+> Cobertura atual: fundamentos e Capítulos 1–7. Ampliada a cada capítulo.
 > Coluna **Perm.**: 👤 qualquer usuário autenticado · 🛡️ administrador do cluster.
 
 ## Sessão e contexto
@@ -216,7 +216,28 @@
 | `oc get hpa` / `oc describe hpa <h>` | Estado e eventos do HPA |
 | `oc explain hpa.spec.metrics.resource.target` | Campos do alvo do HPA |
 
-## Aplicações (prévia; aprofundado no capítulo 7)
+## Atualizações ([7.1](../capitulos/07-atualizacao-aplicacoes/7.1-identidade-e-tags-de-imagens.md), [7.3](../capitulos/07-atualizacao-aplicacoes/7.3-atualizar-imagem-e-configuracoes.md), [7.5](../capitulos/07-atualizacao-aplicacoes/7.5-implantacoes-reproduziveis-com-imagestreams.md), [7.7](../capitulos/07-atualizacao-aplicacoes/7.7-triggers-de-mudanca-de-imagem.md))
+
+| Comando | Para quê |
+|---------|----------|
+| `oc image info --filter-by-os linux/amd64 <img>` | Digest de uma tag (imagem multiarquitetura) |
+| `oc get pod <p> -o jsonpath='{.status.containerStatuses[*].imageID}'` | Digest em execução |
+| `oc set image deployment/<d> <container>=<img>` | Trocar imagem |
+| `oc rollout pause\|resume deployment/<d>` | Agrupar mudanças em um rollout |
+| `oc rollout status deployment/<d>` | Acompanhar rollout |
+| `oc rollout history deployment/<d> [--revision N]` | Revisões |
+| `oc rollout undo deployment/<d> [--to-revision N]` | Rollback |
+| `oc annotate deployment/<d> kubernetes.io/change-cause="..." --overwrite` | Descrever a revisão |
+| `oc import-image <is:tag> --from <img> --confirm` | Criar/atualizar ImageStreamTag |
+| `oc tag <img> <is:tag> [--scheduled] [--reference-policy local]` | Apontar tag; verificação periódica; pull-through |
+| `oc create istag <is:tag> --from-image <img>` | Criar istag (só criação) |
+| `oc tag --alias <is:origem> <is:alias>` | Alias de istag |
+| `oc set image-lookup <is>` / `oc set image-lookup` | Lookup local / listar |
+| `oc describe is <is>` / `oc get istag` | Digest atual (`*`) e histórico |
+| `oc set triggers deployment/<d> --from-image <is:tag> --containers <c>` | Image trigger |
+| `oc set triggers deployment/<d> [--auto\|--manual\|--remove-all]` | Ver/ligar/desligar triggers |
+
+## Aplicações (prévia)
 
 | Comando | Para quê |
 |---------|----------|

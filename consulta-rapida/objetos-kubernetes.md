@@ -34,6 +34,9 @@
 | Event | `v1` | Namespace | Registro de alto nível de algo que aconteceu | 1.7 |
 | HorizontalPodAutoscaler | `autoscaling/v2` | Namespace | Ajusta réplicas por métricas | [6.9](../capitulos/06-confiabilidade/6.9-autoscaling-de-aplicacoes.md) |
 | LimitRange | `v1` | Namespace | Requests/limits padrão e mínimos/máximos por projeto | 6.9 |
+| ImageStream | `image.openshift.io/v1` | Namespace | Nomes curtos, digests e histórico de imagens (OpenShift) | [7.5](../capitulos/07-atualizacao-aplicacoes/7.5-implantacoes-reproduziveis-com-imagestreams.md) |
+| ImageStreamTag | `image.openshift.io/v1` | Namespace | Tag de ImageStream apontando para um digest | 7.5 |
+| KubeletConfig | `machineconfiguration.openshift.io/v1` | Cluster | Ajustes do kubelet (ex.: garbage collector) | [7.1](../capitulos/07-atualizacao-aplicacoes/7.1-identidade-e-tags-de-imagens.md) |
 
 > Confirme `apiVersion` e escopo no seu cluster com `oc api-resources`.
 
