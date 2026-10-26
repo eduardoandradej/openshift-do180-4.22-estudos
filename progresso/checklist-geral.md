@@ -34,8 +34,17 @@ escrito) está em [estado-do-projeto.md](estado-do-projeto.md).
 - [ ] REVISAO.md
 - [ ] RESUMO.md
 
-## Capítulo 2 — Kubernetes and OpenShift Command-line Interfaces and APIs (conteúdo pendente)
-- [ ] 2.1 · [ ] 2.2 GE · [ ] 2.3 · [ ] 2.4 GE · [ ] 2.5 · [ ] 2.6 GE · [ ] 2.7 Lab · [ ] 2.8 Quiz
+## Capítulo 2 — Kubernetes and OpenShift Command-line Interfaces and APIs
+- [ ] 2.1 The Kubernetes and OpenShift Command-line Interfaces
+- [ ] 2.2 GE `cli-interfaces`
+- [ ] 2.3 Inspect Kubernetes Resources
+- [ ] 2.4 GE `cli-resources`
+- [ ] 2.5 Assess the Health of an OpenShift Cluster
+- [ ] 2.6 GE `cli-health`
+- [ ] 2.7 Lab `cli-review` (`lab grade`)
+- [ ] 2.8 Quiz
+- [ ] REVISAO.md
+- [ ] RESUMO.md
 
 ## Capítulo 3 — Run Applications as Containers and Pods (conteúdo pendente)
 - [ ] 3.1 · [ ] 3.2 GE · [ ] 3.3 · [ ] 3.4 GE · [ ] 3.5 · [ ] 3.6 GE · [ ] 3.7 Lab · [ ] 3.8 Quiz

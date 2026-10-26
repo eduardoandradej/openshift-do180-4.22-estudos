@@ -26,6 +26,10 @@ credenciais.
 | 1.6 | GE `intro-navigate` | | | |
 | 1.8 | GE `intro-monitor` | | | |
 | 1.9 | Lab `intro-review` + Quiz 1.10 | | | |
+| 2.2 | GE `cli-interfaces` | | | |
+| 2.4 | GE `cli-resources` | | | |
+| 2.6 | GE `cli-health` | | | |
+| 2.7 | Lab `cli-review` (grade) + Quiz 2.8 | | | |
 
 ## Entradas
 

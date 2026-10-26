@@ -1,6 +1,6 @@
 # Comandos `oc` por tarefa
 
-> Cobertura atual: fundamentos e Capítulo 1. Ampliada a cada capítulo.
+> Cobertura atual: fundamentos e Capítulos 1–2. Ampliada a cada capítulo.
 > Coluna **Perm.**: 👤 qualquer usuário autenticado · 🛡️ administrador do cluster.
 
 ## Sessão e contexto
@@ -13,6 +13,11 @@
 | `oc whoami --show-server` | URL da API | 👤 | F8 |
 | `oc config get-contexts` | Contextos do kubeconfig | 👤 | F8 |
 | `oc version` | Versões do cliente e do servidor | 👤 | F8 |
+| `oc login --token=<t> --server=<api>` | Login por token (recomendado) | — | [2.1](../capitulos/02-cli-e-apis/2.1-interfaces-de-linha-de-comando.md) |
+| `oc login --web <api>` | Login pelo navegador (SSO) | — | 2.1 |
+| `oc cluster-info` | Endereço do control plane | 👤 | 2.1 |
+| `oc api-versions` | Pares `grupo/versão` suportados | 👤 | 2.1 |
+| `oc config use-context <ctx>` | Alternar contexto | 👤 | 2.1 |
 
 ## Projetos
 
@@ -32,6 +37,9 @@
 | `oc api-resources --namespaced=false` | Só tipos de escopo de cluster |
 | `oc explain <tipo>[.campo...]` | Documentação de campos |
 | `oc explain <tipo> --recursive` | Árvore completa de campos |
+| `oc api-resources --api-group ''` | Tipos do grupo core |
+| `oc api-resources --api-group apps --sort-by name` | Tipos de um grupo, ordenados |
+| `oc api-resources --namespaced -o name \| wc -l` | Contar tipos de namespace |
 
 ## Ler recursos
 
@@ -43,7 +51,21 @@
 | `oc get <tipo> <nome> -o yaml` | Objeto completo (spec + status) |
 | `oc get <tipo> -l chave=valor` | Filtrar por label |
 | `oc get pods --show-labels` | Ver labels |
-| `oc describe <tipo> <nome>` | Detalhe legível + eventos |
+| `oc describe <tipo> <nome>` | Detalhe legível + eventos (não use em scripts) |
+| `oc get all` | Tipos principais do projeto (não inclui ConfigMaps, Secrets, PVCs) |
+| `oc status --suggest` | Visão geral do projeto com dicas |
+
+## Formatar e filtrar saídas ([2.3](../capitulos/02-cli-e-apis/2.3-inspecionar-recursos-kubernetes.md))
+
+| Comando | Para quê |
+|---------|----------|
+| `oc get pod <p> -o jsonpath='{.status.podIP}{"\n"}'` | Um campo de um objeto |
+| `oc get pods -o jsonpath='{range .items[*]}{.metadata.name}{"\n"}{end}'` | Laço sobre uma lista |
+| `oc get node <n> -o jsonpath='{.status.addresses[?(@.type=="InternalIP")].address}'` | Filtro dentro de uma lista |
+| `oc get pods -o custom-columns=POD:.metadata.name,IP:.status.podIP` | Tabela personalizada |
+| `oc get pods -o json \| jq '.items[].status.podIP'` | Consulta com `jq` |
+| `oc get pods -o yaml \| yq '.items[0].status.podIP'` | Consulta com `yq` (Mike Farah) |
+| `oc get pods -o go-template='{{range .items}}{{.metadata.name}}{{"\n"}}{{end}}'` | Go template |
 
 ## Saúde da plataforma 🛡️
 
@@ -59,6 +81,15 @@
 | `oc get machines -n openshift-machine-api` | Machines | 1.7 |
 | `oc get machineconfig` / `oc get mcp` | MachineConfigs e pools | 1.7 |
 | `oc get csv -A` | Operators instalados (OLM) | 1.5 |
+| `oc get operators` | Operators adicionais do OLM | [2.5](../capitulos/02-cli-e-apis/2.5-avaliar-a-saude-do-cluster.md) |
+| `oc get co <x> -o jsonpath='{.status.conditions}' \| jq` | Conditions de um cluster operator | 2.5 |
+| `oc adm top pods -A --sum` | Consumo de todos os Pods + total | 2.5 |
+| `oc adm top pods <p> -n <ns> --containers` | Consumo por container | 2.5 |
+| `oc adm node-logs <nó> -u crio --tail N` | Últimas linhas de uma unidade | 2.5 |
+| `oc adm node-logs --role master -u kubelet` | Logs por papel de nó | 2.5 |
+| `oc get node <n> -o jsonpath='{.status.allocatable}'` | Recursos alocáveis | 2.5 |
+| `oc adm must-gather --dest-dir <dir>` | Coleta para suporte | 2.5 |
+| `oc adm inspect clusteroperator/<x> --since 10m --dest-dir <dir>` | Coleta de um componente | 2.5 |
 
 ## Aplicações (prévia; aprofundado nos capítulos 3–7)
 
@@ -66,6 +97,9 @@
 |---------|----------|
 | `oc logs <pod> [-c <container>]` | Logs do container |
 | `oc get events --sort-by=.lastTimestamp` | Eventos recentes |
+| `oc get events -A --sort-by .metadata.creationTimestamp` | Eventos de todo o cluster, em ordem |
+| `oc debug deployment/<x> [--as-user=UID\|--as-root]` | Cópia de depuração do Pod |
+| `oc debug --image=<imagem>` | Shell em uma imagem específica |
 | `oc apply -f <arquivo>` | Criar/atualizar declarativamente |
 | `oc apply -f <arquivo> --dry-run=server` | Validar sem gravar |
 | `oc diff -f <arquivo>` | O que mudaria |

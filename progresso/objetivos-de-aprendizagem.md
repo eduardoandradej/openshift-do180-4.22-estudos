@@ -51,7 +51,18 @@
 | Monitorar nós, Pods, métricas, alertas e eventos | [1.7](../capitulos/01-introducao-kubernetes-openshift/1.7-monitorar-um-cluster-openshift.md) | Diagnóstico (🔎) |
 | Equivalentes de CLI (`oc whoami --show-console`, `oc debug node`, `oc get events`) | 1.5 e 1.7 | ➕ Velocidade no exame prático |
 
-## 4. Competências dos próximos capítulos
+## 4. Competências do Capítulo 2 (✅ confirmadas no PDF)
+
+| Competência | Lição | Relevância para EX280 |
+|-------------|-------|-----------------------|
+| Instalar/obter `oc` e `kubectl` compatíveis; entender a regra de ±1 minor | [2.1](../capitulos/02-cli-e-apis/2.1-interfaces-de-linha-de-comando.md) | ➕ Contexto |
+| Autenticar por senha, token e `--web`; trabalhar com projetos e `-n` | 2.1 | Uso da CLI (🔎) |
+| Descobrir tipos e campos (`api-resources`, `explain`) | [2.3](../capitulos/02-cli-e-apis/2.3-inspecionar-recursos-kubernetes.md) | Consultar recursos sem documentação externa (🔎) |
+| Formatar e filtrar saídas (`-o yaml/json/jsonpath/custom-columns`, `jq`) | 2.3 | Consultar, formatar e filtrar atributos (🔎) |
+| Avaliar operators, nós, Pods, métricas, eventos e alertas | [2.5](../capitulos/02-cli-e-apis/2.5-avaliar-a-saude-do-cluster.md) | Diagnóstico de cluster e aplicações (🔎) |
+| Coletar dados para suporte (`must-gather`, `inspect`) | 2.5 | Diagnóstico (🔎) |
+
+## 5. Competências dos próximos capítulos
 
 Serão adicionadas aqui à medida que cada PDF for recebido e cada capítulo validado.
 

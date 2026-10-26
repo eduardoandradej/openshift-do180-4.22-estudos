@@ -3,10 +3,13 @@
 | Termo | Definição |
 |-------|-----------|
 | **Alert** | Notificação gerada quando uma métrica deixa de atender a uma condição definida |
+| **Allocatable** | Parte da capacidade de um nó disponível para Pods, após reservas do sistema |
 | **API Explorer** | Página da console que cataloga os tipos de recurso do cluster |
 | **cgroups** | Recurso do kernel que limita consumo de CPU, memória etc. |
 | **Cluster Observability Operator (COO)** | Componente opcional que adiciona pilhas de monitoramento customizáveis |
 | **Cluster Operator** | Operator que gerencia um componente da plataforma OpenShift |
+| **Cluster Version Operator (CVO)** | Gerencia os cluster operators e as atualizações da plataforma |
+| **Condition** | Entrada do `status` (`type`, `status`, `reason`, `message`, `lastTransitionTime`) que explica o estado de um objeto |
 | **Control plane** | Conjunto de componentes que coordenam o cluster (API server, etcd, scheduler, controllers) |
 | **Controller** | Laço que compara estado desejado e observado e age para igualá-los |
 | **CRI-O** | Runtime de containers usado pelo kubelet nos nós do OpenShift |
@@ -22,15 +25,19 @@
 | **Image** | Pacote imutável em camadas a partir do qual containers são criados |
 | **In-place pod resize** | Ajuste de CPU/memória de um Pod em execução sem reiniciá-lo (Kubernetes 1.35 / OCP 4.22) |
 | **Insights Operator** | Envia dados do cluster para análise do Lightspeed advisor |
+| **JSONPath** | Linguagem de consulta a JSON embutida no `oc`/`kubectl` (`-o jsonpath`) |
 | **kubelet** | Agente que executa e monitora Pods em cada nó |
 | **Label / Selector** | Par chave=valor em objetos / filtro que seleciona objetos por labels |
 | **Lightspeed advisor** | Serviço no Hybrid Cloud Console que recomenda correções para o cluster |
 | **Machine** | Recurso OpenShift que descreve um nó do cluster |
 | **MachineConfig / MCO** | Configuração declarada do SO dos nós / operador que a aplica e mantém |
+| **must-gather** | `oc adm must-gather`: coleta definições e logs do cluster para o suporte |
 | **Namespace** | Divisão lógica de recursos e base de permissões |
 | **Namespaces (kernel)** | Isolamento da visão de um processo (PID, rede, mount etc.) |
 | **Node** | Máquina física ou virtual que executa Pods |
+| **OAuth server** | Servidor embutido no control plane que emite tokens de acesso |
 | **OCI** | Open Container Initiative: padrões de imagem e runtime |
+| **OLM** | Operator Lifecycle Manager: gerencia operators adicionais |
 | **Operator** | Controller que gerencia uma aplicação de forma declarativa |
 | **Pod** | Menor unidade de execução: 1+ containers no mesmo nó |
 | **Project** | Namespace com metadados adicionais no OpenShift |
@@ -40,6 +47,7 @@
 | **Route** | Exposição externa de um Service por hostname (OpenShift) |
 | **S2I** | Source-to-Image: gera imagem a partir do código-fonte |
 | **Service** | IP virtual estável e DNS que balanceia para Pods |
+| **ServiceAccount** | Conta usada por aplicações para acessar a API |
 | **ServiceMonitor / PodMonitor** | Definem como coletar métricas de Services / Pods |
 | **Software Catalog** | Catálogo unificado da console (4.19+) para Operators, Helm charts e outros softwares |
 | **StorageClass** | Tipo de storage e seu provisionador dinâmico |
