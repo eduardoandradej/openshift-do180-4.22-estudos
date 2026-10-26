@@ -4,7 +4,7 @@
 > Atualize este arquivo ao concluir cada capítulo. As regras permanentes ficam no
 > [CLAUDE.md](../CLAUDE.md).
 
-**Última atualização:** 2026-10-26 (Capítulo 4 concluído)
+**Última atualização:** 2026-10-26 (Capítulo 5 concluído)
 
 ## Situação por módulo
 
@@ -17,11 +17,11 @@
 | Capítulo 2 | ✅ validado | p. 83–156 | 3 lições + prática, revisão, resumo |
 | Capítulo 3 | ✅ validado | p. 157–226 | 3 lições + prática, revisão, resumo |
 | Capítulo 4 | ✅ validado | p. 227–292 | 4 lições + prática, revisão, resumo (sem quiz) |
-| Capítulo 5 | ⏳ | não | Só o índice oficial |
+| Capítulo 5 | ✅ validado | p. 293–376 | 4 lições + prática, revisão, resumo (sem quiz) |
 | Capítulo 6 | ⏳ | não | Só o índice oficial |
 | Capítulo 7 | ⏳ | não | Só o índice oficial |
 | Capítulo 8 | ⏳ | não | Só o índice oficial |
-| consulta-rapida | 🟡 | — | Cobre fundamentos + Caps. 1–4; ampliar a cada capítulo |
+| consulta-rapida | 🟡 | — | Cobre fundamentos + Caps. 1–5; ampliar a cada capítulo |
 | Mapa EX280 | 🟡 | — | Objetivos públicos a conferir na página oficial do exame |
 
 ## Fatos verificados no PDF
@@ -29,6 +29,8 @@
 - Material: `DO180-RHOCP4.22-en-1-20260730`, edição 1 (2026-07-30), 513 páginas.
 - Cluster de laboratório: OpenShift 4.22, nó único `master01`, bare metal UPI, domínio `lab.example.com`.
 - Comando `lab`: `start`/`finish` em todas as atividades; `grade` só em labs de fim de capítulo e comprehensive reviews.
+- Capítulo 5: 5.1 (p. 294–306), 5.2 GE `storage-configs` (p. 307–316), 5.3 (p. 317–327), 5.4 GE `storage-volumes` (p. 328–335), 5.5 (p. 336–341), 5.6 GE `storage-classes` (p. 342–348), 5.7 (p. 349–355), 5.8 GE `storage-statefulsets` (p. 356–362), 5.9 Lab `storage-review` (p. 363–375, **com** `lab grade`), 5.10 Summary (p. 376). Sem quiz.
+- StorageClasses do laboratório: `nfs-storage` (padrão, arquivo) e `lvms-vg1` (LVM local, bloco).
 - Capítulo 4: 4.1 (p. 228–239), 4.2 GE `deploy-newapp` (p. 240–244), 4.3 (p. 245–250), 4.4 GE `deploy-workloads` (p. 251–255), 4.5 (p. 256–264), 4.6 GE `deploy-services` (p. 265–270), 4.7 (p. 271–278), 4.8 GE `deploy-routes` (p. 279–284), 4.9 Lab `deploy-review` (p. 285–291, **com** `lab grade`), 4.10 Summary (p. 292). Sem quiz.
 - Rede do laboratório: Pods `10.8.0.0/14` (host prefix 23), Services `172.30.0.0/16`.
 - Capítulo 3: 3.1 (p. 158–168), 3.2 GE `pods-containers` (p. 169–176), 3.3 (p. 177–189), 3.4 GE `pods-images` (p. 190–200), 3.5 (p. 201–207), 3.6 GE `pods-troubleshooting` (p. 208–213), 3.7 Lab `pods-review` (p. 214–221, **com** `lab grade`), 3.8 Quiz (p. 222–225), 3.9 Summary (p. 226).
@@ -38,6 +40,13 @@
 ## Fluxo de publicação
 
 Por decisão do usuário, o conteúdo é publicado direto no branch `main` (material de estudo, sem deploy).
+
+## Validação do Capítulo 5
+
+- [x] Seções 5.1–5.10 representadas, na ordem; ausência de quiz registrada.
+- [x] Identificadores `storage-configs`, `storage-volumes`, `storage-classes`, `storage-statefulsets`, `storage-review` e `lab grade` (só no 5.9) conferidos.
+- [x] Complementos marcados como fonte externa: `subPath` sem atualização, `volumeDevices` para PVC em modo Block, labels dos PVCs de StatefulSet, `oc create secret docker-registry`.
+- [x] YAML validado; links e âncoras verificados; valores de Secret fictícios.
 
 ## Validação do Capítulo 4
 
@@ -83,7 +92,8 @@ Por decisão do usuário, o conteúdo é publicado direto no branch `main` (mate
 | Rollout, estratégias e rollback de Deployments | Cap. 7 |
 | TLS em Routes (edge, passthrough, re-encrypt) em profundidade | DO280 |
 | Probes e prontidão de endpoints | Cap. 6 |
+| Criptografia do etcd e RBAC sobre Secrets | DO280 |
 
 ## Próximo passo
 
-Aguardar o PDF do **Capítulo 5 — Manage Storage for Application Configuration and Data**.
+Aguardar o PDF do **Capítulo 6 — Configure Applications for Reliability**.

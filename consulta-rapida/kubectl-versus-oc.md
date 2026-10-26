@@ -20,6 +20,7 @@ OpenShift; a documentação de Kubernetes continua válida trocando `kubectl` po
 | `oc project` / `oc projects` / `oc new-project` | Trabalhar com Projects | Project é recurso OpenShift |
 | `oc new-app` | Criar aplicação a partir de imagem, template ou código | Usa builds, ImageStreams, templates |
 | `oc process` | Processar templates do OpenShift | Template é recurso OpenShift |
+| `oc set volume(s)` / `oc set data` / `oc extract` | Volumes de workloads, dados de ConfigMap/Secret | Atalhos do OpenShift (no `kubectl`: editar YAML, `kubectl create ... --dry-run` + `apply`) |
 | `oc expose` (para Route) | Criar Route | Route é recurso OpenShift |
 | `oc start-build`, `oc set triggers` | Builds e triggers de imagem | Recursos OpenShift |
 | `oc adm ...` | Administração do cluster (`top`, `node-logs`, `must-gather`, `policy`) | Ferramentas da plataforma |

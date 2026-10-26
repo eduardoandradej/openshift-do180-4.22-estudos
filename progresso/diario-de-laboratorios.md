@@ -39,6 +39,11 @@ credenciais.
 | 4.6 | GE `deploy-services` | | | |
 | 4.8 | GE `deploy-routes` | | | |
 | 4.9 | Lab `deploy-review` (grade) | | | |
+| 5.2 | GE `storage-configs` | | | |
+| 5.4 | GE `storage-volumes` | | | |
+| 5.6 | GE `storage-classes` | | | |
+| 5.8 | GE `storage-statefulsets` | | | |
+| 5.9 | Lab `storage-review` (grade) | | | |
 
 ## Entradas
 

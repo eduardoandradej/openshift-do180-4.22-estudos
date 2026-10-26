@@ -5,6 +5,7 @@
 | **Alert** | Notificação gerada quando uma métrica deixa de atender a uma condição definida |
 | **Allocatable** | Parte da capacidade de um nó disponível para Pods, após reservas do sistema |
 | **API Explorer** | Página da console que cataloga os tipos de recurso do cluster |
+| **binaryData** | Campo do ConfigMap para conteúdo binário em base64 |
 | **cgroups** | Recurso do kernel que limita consumo de CPU, memória etc. |
 | **Cluster Observability Operator (COO)** | Componente opcional que adiciona pilhas de monitoramento customizáveis |
 | **Cluster Operator** | Operator que gerencia um componente da plataforma OpenShift |
@@ -13,6 +14,7 @@
 | **CNI** | Container Network Interface: padrão de plugins de rede (ex.: OVN-Kubernetes) |
 | **CNO** | Cluster Network Operator: configura a rede e os plugins CNI do OpenShift |
 | **Condition** | Entrada do `status` (`type`, `status`, `reason`, `message`, `lastTransitionTime`) que explica o estado de um objeto |
+| **ConfigMap** | Objeto com configuração não sensível consumida como variáveis ou arquivos |
 | **Control plane** | Conjunto de componentes que coordenam o cluster (API server, etcd, scheduler, controllers) |
 | **Controller** | Laço que compara estado desejado e observado e age para igualá-los |
 | **CoreDNS** | Servidor DNS interno do cluster, implantado pelo DNS operator |
@@ -33,7 +35,9 @@
 | **ExternalName** | Tipo de Service que responde um CNAME para um nome externo |
 | **Floating tag** | Tag que é apelido de outra e muda a cada novo build (ex.: `latest`) |
 | **Gateway API** | Framework de entrada de tráfego com GatewayClass, Gateway e HTTPRoute |
+| **Headless Service** | Service com `clusterIP: None`; o DNS devolve os IPs dos Pods |
 | **Hosted control plane** | Control plane executado como Pods em um cluster de hospedagem |
+| **hostPath** | Volume que monta um caminho do nó; exige Pod privilegiado |
 | **Image** | Pacote imutável em camadas a partir do qual containers são criados |
 | **In-place pod resize** | Ajuste de CPU/memória de um Pod em execução sem reiniciá-lo (Kubernetes 1.35 / OCP 4.22) |
 | **Ingress** | Recurso Kubernetes de exposição HTTP(S); no OpenShift gera uma Route gerenciada |
@@ -61,25 +65,33 @@
 | **Project** | Namespace com metadados adicionais no OpenShift |
 | **PSA** | Pod Security Admission: perfis `privileged`, `baseline`, `restricted` por namespace |
 | **PV / PVC** | Storage real (cluster) / pedido de storage (namespace) |
+| **Reclaim policy** | O que acontece com o PV após o PVC ser apagado: `Retain` ou `Delete` |
 | **Registry** | Servidor que armazena e distribui imagens |
 | **restartPolicy** | Política de reinício de containers de um Pod: `Always`, `OnFailure`, `Never` |
 | **RHEL CoreOS** | SO imutável dos nós do OpenShift, gerenciado pelo cluster |
 | **Route** | Exposição externa de um Service por hostname (OpenShift) |
+| **RWOP** | ReadWriteOncePod: leitura e escrita por um único Pod |
 | **S2I** | Source-to-Image: gera imagem a partir do código-fonte |
 | **SCC** | Security Context Constraints: controlam permissões de segurança de Pods no OpenShift |
+| **Secret** | Objeto para dados sensíveis; valores em base64 (não criptografados) |
 | **Service** | IP virtual estável e DNS que balanceia para Pods |
 | **ServiceAccount** | Conta usada por aplicações para acessar a API |
 | **ServiceMonitor / PodMonitor** | Definem como coletar métricas de Services / Pods |
 | **Sigstore** | Projeto para assinar e verificar imagens de container |
 | **Skopeo** | Ferramenta para inspecionar, copiar e sincronizar imagens remotas sem daemon |
 | **Software Catalog** | Catálogo unificado da console (4.19+) para Operators, Helm charts e outros softwares |
+| **StatefulSet** | Workload com Pods de identidade estável e um PVC por réplica |
 | **Sticky session** | Afinidade de sessão por cookie no Ingress Controller |
+| **Storage Object in Use Protection** | Adia a remoção de PVC/PV em uso para evitar perda de dados |
 | **StorageClass** | Tipo de storage e seu provisionador dinâmico |
 | **Tag** | Rótulo móvel de uma imagem (ex.: `latest`) |
 | **Template** | Recurso OpenShift com definições parametrizadas de vários recursos |
 | **UBI** | Universal Base Image: imagens base Red Hat redistribuíveis (standard, init, minimal, micro) |
 | **uid-range** | Anotação do projeto com a faixa de UIDs atribuída aos containers |
 | **UPI** | User Provisioned Infrastructure: instalação em infraestrutura preparada pelo usuário |
+| **volumeBindingMode** | Quando o PV é criado: `Immediate` ou `WaitForFirstConsumer` |
+| **volumeClaimTemplates** | Modelo de PVC de um StatefulSet, um por réplica |
+| **volumeMode** | `Filesystem` (padrão) ou `Block` (dispositivo cru) |
 
 ---
 [← Troubleshooting](troubleshooting.md) | [Início](../README.md)

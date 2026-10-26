@@ -83,7 +83,17 @@
 | Expor com Route/Ingress, sessões persistentes, escalar | [4.7](../capitulos/04-deploy-e-redes/4.7-escalar-e-expor-aplicacoes.md) | Expor aplicações (🔎) |
 | Conhecer a Gateway API e os tipos de Service | 4.7 | ➕ Contexto (aprofundar no DO280) |
 
-## 7. Competências dos próximos capítulos
+## 7. Competências do Capítulo 5 (✅ confirmadas no PDF)
+
+| Competência | Lição | Relevância para EX280 |
+|-------------|-------|-----------------------|
+| Criar ConfigMaps e Secrets e consumi-los como variáveis e arquivos | [5.1](../capitulos/05-configuracao-e-storage/5.1-externalizar-configuracao.md) | Configurar aplicações (🔎) |
+| Atualizar configuração (`extract`, `set data`) e reiniciar quando necessário | 5.1 | Configurar aplicações (🔎) |
+| Provisionar PVCs, montar em Deployments, expandir | [5.3](../capitulos/05-configuracao-e-storage/5.3-provisionar-volumes-persistentes.md) | Gerenciar storage (🔎) |
+| Escolher StorageClass pelos requisitos (acesso, modo, reclaim, binding) | [5.5](../capitulos/05-configuracao-e-storage/5.5-selecionar-storage-class.md) | Gerenciar storage (🔎) |
+| Implantar StatefulSets com headless Service e PVC por réplica | [5.7](../capitulos/05-configuracao-e-storage/5.7-storage-nao-compartilhado-com-statefulsets.md) | Gerenciar storage e implantar aplicações (🔎) |
+
+## 8. Competências dos próximos capítulos
 
 Serão adicionadas aqui à medida que cada PDF for recebido e cada capítulo validado.
 

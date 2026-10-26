@@ -1,6 +1,6 @@
 # Troubleshooting: sintoma → causa → verificação
 
-> Cobertura atual: fundamentos e Capítulos 1–4. Ampliado no capítulo 6.
+> Cobertura atual: fundamentos e Capítulos 1–5. Ampliado no capítulo 6.
 
 ## Acesso e CLI
 
@@ -56,6 +56,22 @@
 | `oc delete all` deixou PVC/Secret | `all` é subconjunto | `oc api-resources --categories=all` |
 | Banco recém-implantado em `CrashLoopBackOff` | Variáveis obrigatórias ausentes | `oc logs`; `oc set env deployment/<d> ...` |
 | Sticky session não funciona | Route passthrough | Usar edge/re-encrypt |
+
+## Configuração e storage ([5.1](../capitulos/05-configuracao-e-storage/5.1-externalizar-configuracao.md)–[5.7](../capitulos/05-configuracao-e-storage/5.7-storage-nao-compartilhado-com-statefulsets.md))
+
+| Sintoma | Causa provável | Como verificar |
+|---------|----------------|----------------|
+| `CreateContainerConfigError` | ConfigMap/Secret ou chave inexistente | `oc describe pod`; `oc get cm,secret` |
+| Variável com valor antigo após `oc set data` | Variáveis só são lidas no start | `oc rollout restart deployment/<d>` |
+| Arquivo montado não atualiza | `subPath` ou aplicação lê só no start | Reiniciar; evitar `subPath` |
+| Volume "apagou" arquivos da imagem | Montagem sobrepõe o diretório | Montar em outro caminho |
+| PVC `Pending` | Classe inexistente, sem padrão, sem PV compatível, ou `WaitForFirstConsumer` | `oc describe pvc`; `oc get sc` |
+| Réplicas em `ContainerCreating` com mesmo PVC | RWO em nós diferentes | RWX ou StatefulSet |
+| Expansão de PVC não acontece | `allowVolumeExpansion` falso ou storage não atende | `oc describe pvc`; reduzir pedido (≥ capacidade atual) |
+| PVC apagado continua `Terminating` | Pod ainda usa o PVC (protection) | Remover o volume do workload |
+| PV `Released` não reaproveitado | `Retain` exige ação manual | Admin: backup do YAML, apagar e recriar PV |
+| Pods do StatefulSet sem DNS por Pod | Headless Service ausente ou seletor errado | `oc get svc` (`CLUSTER-IP None`); labels |
+| Dados "voltaram" após recriar StatefulSet | PVCs permanecem | `oc get pvc` |
 
 ## Aplicações (prévia)
 

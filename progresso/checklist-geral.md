@@ -71,8 +71,18 @@ escrito) está em [estado-do-projeto.md](estado-do-projeto.md).
 - [ ] REVISAO.md
 - [ ] RESUMO.md
 
-## Capítulo 5 — Manage Storage for Application Configuration and Data (conteúdo pendente)
-- [ ] 5.1 · [ ] 5.2 GE · [ ] 5.3 · [ ] 5.4 GE · [ ] 5.5 · [ ] 5.6 GE · [ ] 5.7 · [ ] 5.8 GE · [ ] 5.9 Lab
+## Capítulo 5 — Manage Storage for Application Configuration and Data
+- [ ] 5.1 Externalize the Configuration of Applications
+- [ ] 5.2 GE `storage-configs`
+- [ ] 5.3 Provision Persistent Data Volumes
+- [ ] 5.4 GE `storage-volumes`
+- [ ] 5.5 Selecting a Storage Class for an Application
+- [ ] 5.6 GE `storage-classes`
+- [ ] 5.7 Manage Non-shared Storage with Stateful Sets
+- [ ] 5.8 GE `storage-statefulsets`
+- [ ] 5.9 Lab `storage-review` (`lab grade`)
+- [ ] REVISAO.md
+- [ ] RESUMO.md
 
 ## Capítulo 6 — Configure Applications for Reliability (conteúdo pendente)
 - [ ] 6.1 · [ ] 6.2 GE · [ ] 6.3 · [ ] 6.4 GE · [ ] 6.5 · [ ] 6.6 GE · [ ] 6.7 · [ ] 6.8 GE · [ ] 6.9 · [ ] 6.10 GE · [ ] 6.11 Lab · [ ] 6.12 Quiz

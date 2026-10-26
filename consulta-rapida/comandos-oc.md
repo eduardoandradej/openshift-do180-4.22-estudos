@@ -1,6 +1,6 @@
 # Comandos `oc` por tarefa
 
-> Cobertura atual: fundamentos e Capítulos 1–4. Ampliada a cada capítulo.
+> Cobertura atual: fundamentos e Capítulos 1–5. Ampliada a cada capítulo.
 > Coluna **Perm.**: 👤 qualquer usuário autenticado · 🛡️ administrador do cluster.
 
 ## Sessão e contexto
@@ -169,7 +169,36 @@
 | `oc annotate ingress <i> ingress.kubernetes.io/affinity=cookie` | Sticky session em Ingress |
 | `oc scale --replicas=N deployment/<d>` | Escalar |
 
-## Aplicações (prévia; aprofundado nos capítulos 5–7)
+## Configuração ([5.1](../capitulos/05-configuracao-e-storage/5.1-externalizar-configuracao.md))
+
+| Comando | Para quê |
+|---------|----------|
+| `oc create secret generic <s> --from-literal k=v` / `--from-file k=arq` | Secret Opaque |
+| `oc create secret tls <s> --cert <crt> --key <key>` | Secret TLS |
+| `oc create cm <c> --from-literal k=v` / `--from-file arq` | ConfigMap |
+| `oc set env deployment/<d> --from configmap/<c>` | Todas as chaves como variáveis |
+| `oc set env deployment/<d> --from secret/<s> --prefix P_` | Variáveis com prefixo (chaves em maiúsculas) |
+| `oc set env deployment/<d> --list` | Ver variáveis |
+| `oc set volume deployment/<d> --add --type configmap --configmap-name <c> --mount-path <p>` | ConfigMap como arquivos |
+| `oc set volume deployment/<d> --add --type secret --secret-name <s> --mount-path <p>` | Secret como arquivos |
+| `oc extract secret/<s> --to <dir> --confirm` | Baixar chaves para arquivos |
+| `oc set data secret/<s> --from-file <arq>` / `oc set data cm/<c> k=v` | Atualizar dados |
+| `oc rollout restart deployment/<d>` | Reiniciar Pods para ler variáveis novas |
+
+## Storage ([5.3](../capitulos/05-configuracao-e-storage/5.3-provisionar-volumes-persistentes.md), [5.5](../capitulos/05-configuracao-e-storage/5.5-selecionar-storage-class.md), [5.7](../capitulos/05-configuracao-e-storage/5.7-storage-nao-compartilhado-com-statefulsets.md))
+
+| Comando | Para quê |
+|---------|----------|
+| `oc set volumes deployment/<d> --add --type pvc --claim-name <c> --claim-size <t> --claim-mode rwo --claim-class <sc> --mount-path <p>` | Criar e montar PVC |
+| `oc set volumes deployment/<d> --add --name <v> --claim-name <c> --mount-path <p>` | Montar PVC existente |
+| `oc set volume deployment/<d>` / `--remove --name <v>` | Listar / remover volumes |
+| `oc get pvc` / `oc describe pvc <c>` | Estado e eventos do PVC |
+| `oc get pv` | PVs (admin) |
+| `oc get storageclass` / `oc describe sc <x>` | Classes e parâmetros |
+| `oc patch pvc/<c> --type merge -p '{"spec":{"resources":{"requests":{"storage":"<t>"}}}}'` | Expandir PVC |
+| `oc get statefulset` / `oc scale statefulset/<s> --replicas N` | StatefulSets |
+
+## Aplicações (prévia; aprofundado nos capítulos 6–7)
 
 | Comando | Para quê |
 |---------|----------|
