@@ -19,6 +19,7 @@ OpenShift; a documentação de Kubernetes continua válida trocando `kubectl` po
 | `oc whoami [--show-console]` | Identidade e URLs | Conceito de console é do OpenShift |
 | `oc project` / `oc projects` / `oc new-project` | Trabalhar com Projects | Project é recurso OpenShift |
 | `oc new-app` | Criar aplicação a partir de imagem, template ou código | Usa builds, ImageStreams, templates |
+| `oc process` | Processar templates do OpenShift | Template é recurso OpenShift |
 | `oc expose` (para Route) | Criar Route | Route é recurso OpenShift |
 | `oc start-build`, `oc set triggers` | Builds e triggers de imagem | Recursos OpenShift |
 | `oc adm ...` | Administração do cluster (`top`, `node-logs`, `must-gather`, `policy`) | Ferramentas da plataforma |

@@ -1,6 +1,6 @@
 # Comandos `oc` por tarefa
 
-> Cobertura atual: fundamentos e Capítulos 1–3. Ampliada a cada capítulo.
+> Cobertura atual: fundamentos e Capítulos 1–4. Ampliada a cada capítulo.
 > Coluna **Perm.**: 👤 qualquer usuário autenticado · 🛡️ administrador do cluster.
 
 ## Sessão e contexto
@@ -134,7 +134,42 @@
 | `oc image extract <img> --path <orig>:<dest>` | Extrair arquivos sem rodar |
 | `oc image mirror <a> <b>` | Espelhar entre registries |
 
-## Aplicações (prévia; aprofundado nos capítulos 4–7)
+## Implantar aplicações ([4.1](../capitulos/04-deploy-e-redes/4.1-implantar-a-partir-de-imagem-e-template.md), [4.3](../capitulos/04-deploy-e-redes/4.3-workloads-de-longa-e-curta-duracao.md))
+
+| Comando | Para quê |
+|---------|----------|
+| `oc get templates -n openshift` | Templates predefinidos |
+| `oc process --parameters <t> -n openshift` | Parâmetros de um template |
+| `oc process -f <arq> -p K=V \| oc apply -f -` | Processar e aplicar template |
+| `oc new-app --template <t> --param K=V` | Criar a partir de template |
+| `oc new-app --image <img> [--name <n>]` | Criar a partir de imagem |
+| `oc new-app <url-git>#<ref> --name <n>` | Criar a partir de Git |
+| `oc create deployment <n> --image <img> [--replicas N]` | Criar Deployment |
+| `oc create deployment <n> --image <img> --dry-run=client -o yaml` | Gerar manifesto |
+| `oc set env deployment/<n> K=V` | Variáveis no template de Pod |
+| `oc create job <n> --image <img> -- <cmd>` | Job |
+| `oc create cronjob <n> --image <img> --schedule "<cron>" -- <cmd>` | CronJob |
+| `oc create job <n> --from=cronjob/<cj>` | Disparar CronJob manualmente |
+| `oc api-resources --categories=all` | Tipos incluídos em `all` |
+
+## Rede e exposição ([4.5](../capitulos/04-deploy-e-redes/4.5-redes-de-pods-e-services.md), [4.7](../capitulos/04-deploy-e-redes/4.7-escalar-e-expor-aplicacoes.md))
+
+| Comando | Para quê |
+|---------|----------|
+| `oc expose deployment/<d> [--port P] [--target-port T] [--name N]` | Criar Service |
+| `oc expose deployment/<d> --type NodePort --port P` | Service NodePort |
+| `oc create service externalname <n> --external-name <fqdn>` | Service ExternalName |
+| `oc get svc -o wide` | Services com seletor |
+| `oc get endpointslices -l kubernetes.io/service-name=<svc>` | Endpoints de um Service |
+| `oc describe network.config/cluster` | CIDRs de Pods e Services (admin) |
+| `oc expose service <svc> [--hostname H] [--name N]` | Criar Route |
+| `oc get route <r> -o jsonpath='{.spec.host}'` | Hostname da Route |
+| `oc create ingress <n> --rule="host/*=svc:porta"` | Criar Ingress |
+| `oc annotate route <r> router.openshift.io/cookie_name=<c>` | Sticky session em Route |
+| `oc annotate ingress <i> ingress.kubernetes.io/affinity=cookie` | Sticky session em Ingress |
+| `oc scale --replicas=N deployment/<d>` | Escalar |
+
+## Aplicações (prévia; aprofundado nos capítulos 5–7)
 
 | Comando | Para quê |
 |---------|----------|

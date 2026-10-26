@@ -1,6 +1,6 @@
 # Troubleshooting: sintoma → causa → verificação
 
-> Cobertura atual: fundamentos e Capítulos 1–3. Ampliado nos capítulos 4 e 6.
+> Cobertura atual: fundamentos e Capítulos 1–4. Ampliado no capítulo 6.
 
 ## Acesso e CLI
 
@@ -41,6 +41,21 @@
 | `oc cp` falha com erro de `tar` | Imagem sem `tar` | `oc rsync`, `oc exec -i ... cat >`, ou incluir na imagem |
 | `port-forward`: `address already in use` | Porta local ocupada | Outra porta local (`18080:8080`) |
 | `skopeo`: `Invalid image name` | Faltou o transporte | Prefixo `docker://` |
+
+## Deploy, rede e exposição ([4.5](../capitulos/04-deploy-e-redes/4.5-redes-de-pods-e-services.md), [4.7](../capitulos/04-deploy-e-redes/4.7-escalar-e-expor-aplicacoes.md))
+
+| Sintoma | Causa provável | Como verificar |
+|---------|----------------|----------------|
+| Service sem endpoints | Seletor ≠ labels; Pods não prontos | `oc get svc -o wide`; `oc get pods --show-labels`; `oc get endpointslices -l kubernetes.io/service-name=<svc>` |
+| Conecta pelo IP do Pod, não pelo Service | `port`/`targetPort` errados ou seletor | `oc describe svc` |
+| Nome do Service não resolve | Service em outro projeto | Usar `svc.projeto` |
+| Route responde 503 | Host sem Route, ou Route sem endpoints | `oc get route`; endpoints do Service |
+| Hostname da Route inesperado | Sem `--hostname`: `<route>-<projeto>.<apps>` | `oc get route` |
+| Job não termina / muitos Pods com erro | Comando falhando; `backoffLimit` | `oc get jobs`; `oc logs job/<j>` |
+| CronJob roda no horário "errado" | Fuso do controller | Definir `spec.timeZone` |
+| `oc delete all` deixou PVC/Secret | `all` é subconjunto | `oc api-resources --categories=all` |
+| Banco recém-implantado em `CrashLoopBackOff` | Variáveis obrigatórias ausentes | `oc logs`; `oc set env deployment/<d> ...` |
+| Sticky session não funciona | Route passthrough | Usar edge/re-encrypt |
 
 ## Aplicações (prévia)
 

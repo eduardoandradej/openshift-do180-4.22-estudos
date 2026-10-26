@@ -72,7 +72,18 @@
 | Encontrar e inspecionar imagens (`skopeo`, `oc image`) | [3.3](../capitulos/03-containers-e-pods/3.3-encontrar-e-inspecionar-imagens.md) | Escolher e validar imagens (🔎) |
 | Diagnosticar Pods: logs, eventos, exec, cp, port-forward, edit/patch | [3.5](../capitulos/03-containers-e-pods/3.5-diagnosticar-containers-e-pods.md) | Diagnóstico de aplicações (🔎) |
 
-## 6. Competências dos próximos capítulos
+## 6. Competências do Capítulo 4 (✅ confirmadas no PDF)
+
+| Competência | Lição | Relevância para EX280 |
+|-------------|-------|-----------------------|
+| Implantar a partir de imagem, Git e template (`oc new-app`, `oc process`) | [4.1](../capitulos/04-deploy-e-redes/4.1-implantar-a-partir-de-imagem-e-template.md) | Implantar aplicações (🔎) |
+| Gerar e aplicar manifestos (imperativo → declarativo) | 4.1 | Implantar com manifestos (🔎) |
+| Escolher e criar Job, CronJob, Deployment, DaemonSet | [4.3](../capitulos/04-deploy-e-redes/4.3-workloads-de-longa-e-curta-duracao.md) | Implantar aplicações (🔎) |
+| Criar Services, verificar seletores e endpoints, usar o DNS interno | [4.5](../capitulos/04-deploy-e-redes/4.5-redes-de-pods-e-services.md) | Conectividade e diagnóstico (🔎) |
+| Expor com Route/Ingress, sessões persistentes, escalar | [4.7](../capitulos/04-deploy-e-redes/4.7-escalar-e-expor-aplicacoes.md) | Expor aplicações (🔎) |
+| Conhecer a Gateway API e os tipos de Service | 4.7 | ➕ Contexto (aprofundar no DO280) |
+
+## 7. Competências dos próximos capítulos
 
 Serão adicionadas aqui à medida que cada PDF for recebido e cada capítulo validado.
 

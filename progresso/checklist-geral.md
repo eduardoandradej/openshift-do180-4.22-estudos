@@ -58,8 +58,18 @@ escrito) está em [estado-do-projeto.md](estado-do-projeto.md).
 - [ ] REVISAO.md
 - [ ] RESUMO.md
 
-## Capítulo 4 — Deploy Managed and Networked Applications on Kubernetes (conteúdo pendente)
-- [ ] 4.1 · [ ] 4.2 GE · [ ] 4.3 · [ ] 4.4 GE · [ ] 4.5 · [ ] 4.6 GE · [ ] 4.7 · [ ] 4.8 GE · [ ] 4.9 Lab
+## Capítulo 4 — Deploy Managed and Networked Applications on Kubernetes
+- [ ] 4.1 Deploy Applications from an Image and from a Template
+- [ ] 4.2 GE `deploy-newapp`
+- [ ] 4.3 Manage Long-lived and Short-lived Applications by Using the Kubernetes Workload API
+- [ ] 4.4 GE `deploy-workloads`
+- [ ] 4.5 Kubernetes Pod and Service Networks
+- [ ] 4.6 GE `deploy-services`
+- [ ] 4.7 Scale and Expose Applications to External Access
+- [ ] 4.8 GE `deploy-routes`
+- [ ] 4.9 Lab `deploy-review` (`lab grade`)
+- [ ] REVISAO.md
+- [ ] RESUMO.md
 
 ## Capítulo 5 — Manage Storage for Application Configuration and Data (conteúdo pendente)
 - [ ] 5.1 · [ ] 5.2 GE · [ ] 5.3 · [ ] 5.4 GE · [ ] 5.5 · [ ] 5.6 GE · [ ] 5.7 · [ ] 5.8 GE · [ ] 5.9 Lab

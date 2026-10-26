@@ -34,6 +34,11 @@ credenciais.
 | 3.4 | GE `pods-images` | | | |
 | 3.6 | GE `pods-troubleshooting` | | | |
 | 3.7 | Lab `pods-review` (grade) + Quiz 3.8 | | | |
+| 4.2 | GE `deploy-newapp` | | | |
+| 4.4 | GE `deploy-workloads` | | | |
+| 4.6 | GE `deploy-services` | | | |
+| 4.8 | GE `deploy-routes` | | | |
+| 4.9 | Lab `deploy-review` (grade) | | | |
 
 ## Entradas
 

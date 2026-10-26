@@ -9,6 +9,11 @@
 | DaemonSet | `apps/v1` | Namespace | Um Pod por nó | F4 |
 | Job | `batch/v1` | Namespace | Tarefa até a conclusão | F4 |
 | CronJob | `batch/v1` | Namespace | Job agendado | F4 |
+| Template | `template.openshift.io/v1` | Namespace | Definições parametrizadas de recursos (OpenShift) | [4.1](../capitulos/04-deploy-e-redes/4.1-implantar-a-partir-de-imagem-e-template.md) |
+| Ingress | `networking.k8s.io/v1` | Namespace | Exposição HTTP(S) padrão Kubernetes | [4.7](../capitulos/04-deploy-e-redes/4.7-escalar-e-expor-aplicacoes.md) |
+| GatewayClass | `gateway.networking.k8s.io/v1` | Cluster | Controller de gateways | 4.7 |
+| Gateway / HTTPRoute | `gateway.networking.k8s.io/v1` | Namespace | Ponto de entrada / regras HTTP | 4.7 |
+| Network (config) | `config.openshift.io/v1` | Cluster | CIDRs e tipo de rede do cluster | [4.5](../capitulos/04-deploy-e-redes/4.5-redes-de-pods-e-services.md) |
 | Service | `v1` | Namespace | IP virtual estável + DNS + balanceamento | [F6](../01-fundamentos-essenciais/06-redes-e-servicos.md) |
 | EndpointSlice | `discovery.k8s.io/v1` | Namespace | IPs dos Pods prontos de um Service | F6 |
 | Route | `route.openshift.io/v1` | Namespace | Hostname externo → Service (OpenShift) | F6 |
