@@ -1,0 +1,12 @@
+# Exemplo autoral: pedido de 1 GiB de armazenamento RWO.
+# Sem storageClassName: usa a StorageClass marcada como padrão no cluster.
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: dados-web
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 1Gi
