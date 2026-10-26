@@ -84,8 +84,21 @@ escrito) está em [estado-do-projeto.md](estado-do-projeto.md).
 - [ ] REVISAO.md
 - [ ] RESUMO.md
 
-## Capítulo 6 — Configure Applications for Reliability (conteúdo pendente)
-- [ ] 6.1 · [ ] 6.2 GE · [ ] 6.3 · [ ] 6.4 GE · [ ] 6.5 · [ ] 6.6 GE · [ ] 6.7 · [ ] 6.8 GE · [ ] 6.9 · [ ] 6.10 GE · [ ] 6.11 Lab · [ ] 6.12 Quiz
+## Capítulo 6 — Configure Applications for Reliability
+- [ ] 6.1 Application High Availability with Kubernetes
+- [ ] 6.2 GE `reliability-ha`
+- [ ] 6.3 Application Health Probes
+- [ ] 6.4 GE `reliability-probes`
+- [ ] 6.5 Reserving Compute Capacity for Applications
+- [ ] 6.6 GE `reliability-requests`
+- [ ] 6.7 Limit Compute Capacity for Applications
+- [ ] 6.8 GE `reliability-limits`
+- [ ] 6.9 Application Autoscaling
+- [ ] 6.10 GE `reliability-autoscaling`
+- [ ] 6.11 Lab `reliability-review` (`lab grade`)
+- [ ] 6.12 Quiz
+- [ ] REVISAO.md
+- [ ] RESUMO.md
 
 ## Capítulo 7 — Manage Application Updates (conteúdo pendente)
 - [ ] 7.1 · [ ] 7.2 GE · [ ] 7.3 · [ ] 7.4 GE · [ ] 7.5 · [ ] 7.6 GE · [ ] 7.7 · [ ] 7.8 GE · [ ] 7.9 Lab

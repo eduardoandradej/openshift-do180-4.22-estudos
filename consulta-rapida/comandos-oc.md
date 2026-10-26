@@ -1,6 +1,6 @@
 # Comandos `oc` por tarefa
 
-> Cobertura atual: fundamentos e Capítulos 1–5. Ampliada a cada capítulo.
+> Cobertura atual: fundamentos e Capítulos 1–6. Ampliada a cada capítulo.
 > Coluna **Perm.**: 👤 qualquer usuário autenticado · 🛡️ administrador do cluster.
 
 ## Sessão e contexto
@@ -198,7 +198,25 @@
 | `oc patch pvc/<c> --type merge -p '{"spec":{"resources":{"requests":{"storage":"<t>"}}}}'` | Expandir PVC |
 | `oc get statefulset` / `oc scale statefulset/<s> --replicas N` | StatefulSets |
 
-## Aplicações (prévia; aprofundado nos capítulos 6–7)
+## Confiabilidade ([6.3](../capitulos/06-confiabilidade/6.3-health-probes.md), [6.5](../capitulos/06-confiabilidade/6.5-reservar-capacidade-de-computacao.md), [6.7](../capitulos/06-confiabilidade/6.7-limitar-capacidade-de-computacao.md), [6.9](../capitulos/06-confiabilidade/6.9-autoscaling-de-aplicacoes.md))
+
+| Comando | Para quê |
+|---------|----------|
+| `oc set probe deployment/<d> --readiness --get-url http://:<p>/<caminho>` | Readiness HTTP |
+| `oc set probe deployment/<d> --liveness --open-tcp <p>` | Liveness TCP |
+| `oc set probe deployment/<d> --startup --get-url ... --period-seconds 10 --failure-threshold 30` | Startup para inicialização lenta |
+| `oc set probe deployment/<d> --liveness -- <cmd>` | Probe por comando |
+| `oc set probe deployment/<d> --liveness --remove` | Remover probe |
+| `oc set resources deployment/<d> --requests cpu=100m,memory=256Mi` | Requests |
+| `oc set resources deployment/<d> --limits cpu=500m,memory=512Mi` | Limits |
+| `oc describe node <n>` | Capacity, Allocatable, requests e limits alocados |
+| `oc get events --field-selector reason=FailedScheduling` | Pods que não couberam |
+| `oc patch pod <p> --subresource resize --type merge -p '{"spec":{"containers":[...]}}'` | Redimensionar no local (4.22) |
+| `oc autoscale deployment/<d> --min N --max M --cpu P%` | Criar HPA |
+| `oc get hpa` / `oc describe hpa <h>` | Estado e eventos do HPA |
+| `oc explain hpa.spec.metrics.resource.target` | Campos do alvo do HPA |
+
+## Aplicações (prévia; aprofundado no capítulo 7)
 
 | Comando | Para quê |
 |---------|----------|

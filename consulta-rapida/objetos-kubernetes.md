@@ -32,6 +32,8 @@
 | ClusterServiceVersion | `operators.coreos.com/v1alpha1` | Namespace | Operator instalado via OLM | [1.5](../capitulos/01-introducao-kubernetes-openshift/1.5-navegar-na-web-console.md) |
 | ServiceMonitor / PodMonitor | `monitoring.coreos.com/v1` | Namespace | Define coleta de métricas | 1.7 |
 | Event | `v1` | Namespace | Registro de alto nível de algo que aconteceu | 1.7 |
+| HorizontalPodAutoscaler | `autoscaling/v2` | Namespace | Ajusta réplicas por métricas | [6.9](../capitulos/06-confiabilidade/6.9-autoscaling-de-aplicacoes.md) |
+| LimitRange | `v1` | Namespace | Requests/limits padrão e mínimos/máximos por projeto | 6.9 |
 
 > Confirme `apiVersion` e escopo no seu cluster com `oc api-resources`.
 

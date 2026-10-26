@@ -44,6 +44,12 @@ credenciais.
 | 5.6 | GE `storage-classes` | | | |
 | 5.8 | GE `storage-statefulsets` | | | |
 | 5.9 | Lab `storage-review` (grade) | | | |
+| 6.2 | GE `reliability-ha` | | | |
+| 6.4 | GE `reliability-probes` | | | |
+| 6.6 | GE `reliability-requests` | | | |
+| 6.8 | GE `reliability-limits` | | | |
+| 6.10 | GE `reliability-autoscaling` | | | |
+| 6.11 | Lab `reliability-review` (grade) + Quiz 6.12 | | | |
 
 ## Entradas
 

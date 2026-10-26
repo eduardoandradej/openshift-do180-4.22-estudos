@@ -93,7 +93,17 @@
 | Escolher StorageClass pelos requisitos (acesso, modo, reclaim, binding) | [5.5](../capitulos/05-configuracao-e-storage/5.5-selecionar-storage-class.md) | Gerenciar storage (🔎) |
 | Implantar StatefulSets com headless Service e PVC por réplica | [5.7](../capitulos/05-configuracao-e-storage/5.7-storage-nao-compartilhado-com-statefulsets.md) | Gerenciar storage e implantar aplicações (🔎) |
 
-## 8. Competências dos próximos capítulos
+## 8. Competências do Capítulo 6 (✅ confirmadas no PDF)
+
+| Competência | Lição | Relevância para EX280 |
+|-------------|-------|-----------------------|
+| Explicar os mecanismos de HA (restart, controllers, probes, escala) | [6.1](../capitulos/06-confiabilidade/6.1-alta-disponibilidade-de-aplicacoes.md) | Confiabilidade (🔎) |
+| Configurar probes startup, readiness e liveness | [6.3](../capitulos/06-confiabilidade/6.3-health-probes.md) | Confiabilidade (🔎) |
+| Definir requests e diagnosticar `FailedScheduling` | [6.5](../capitulos/06-confiabilidade/6.5-reservar-capacidade-de-computacao.md) | Confiabilidade (🔎) |
+| Definir limits, diagnosticar `OOMKilled`/throttling, redimensionar no local | [6.7](../capitulos/06-confiabilidade/6.7-limitar-capacidade-de-computacao.md) | Confiabilidade (🔎) |
+| Criar e acompanhar HPA (CPU e memória); conhecer o VPA | [6.9](../capitulos/06-confiabilidade/6.9-autoscaling-de-aplicacoes.md) | Confiabilidade (🔎) |
+
+## 9. Competências dos próximos capítulos
 
 Serão adicionadas aqui à medida que cada PDF for recebido e cada capítulo validado.
 

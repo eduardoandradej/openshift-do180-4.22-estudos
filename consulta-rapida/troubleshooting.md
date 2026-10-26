@@ -1,6 +1,6 @@
 # Troubleshooting: sintoma → causa → verificação
 
-> Cobertura atual: fundamentos e Capítulos 1–5. Ampliado no capítulo 6.
+> Cobertura atual: fundamentos e Capítulos 1–6.
 
 ## Acesso e CLI
 
@@ -72,6 +72,23 @@
 | PV `Released` não reaproveitado | `Retain` exige ação manual | Admin: backup do YAML, apagar e recriar PV |
 | Pods do StatefulSet sem DNS por Pod | Headless Service ausente ou seletor errado | `oc get svc` (`CLUSTER-IP None`); labels |
 | Dados "voltaram" após recriar StatefulSet | PVCs permanecem | `oc get pvc` |
+
+## Confiabilidade ([6.3](../capitulos/06-confiabilidade/6.3-health-probes.md)–[6.9](../capitulos/06-confiabilidade/6.9-autoscaling-de-aplicacoes.md))
+
+| Sintoma | Causa provável | Como verificar |
+|---------|----------------|----------------|
+| Pod `Running`, `READY 0/1` | Readiness falhando (caminho/porta, dependência) | `oc describe pod` (`Readiness probe failed`) |
+| Reinícios em loop com `Liveness probe failed` | Aplicação lenta sem startup probe; limites curtos | Adicionar startup; ajustar `failureThreshold`/`periodSeconds` |
+| Erros para clientes durante escala ou rollout | Sem readiness | `oc set probe --readiness` |
+| Pod travado continua recebendo tráfego | Sem liveness/readiness | Configurar probes |
+| `Pending` com `Insufficient memory/cpu` | Soma de requests excede o allocatable | `oc describe node`; revisar requests |
+| `OOMKilled`, exit 137 | Limit de memória atingido (vazamento ou limit pequeno) | `oc describe pod` (Last State); `oc adm top pods` |
+| Aplicação lenta com CPU livre no nó | Throttling por limit de CPU | `oc adm top pods` próximo do limit |
+| Runtime antigo com OOM inesperado | Sem suporte a cgroups v2 | Atualizar imagem (OpenJDK 8u372+, Node.js 22+, .NET 5+) |
+| `oc set resources` recusa `1gi` | Sufixo inválido | Usar `1Gi` |
+| HPA `<unknown>` persistente | Sem request para a métrica | `oc set resources --requests` |
+| HPA não passa de N réplicas | `maxReplicas` ou falta de capacidade | `oc describe hpa`; Pods `Pending` |
+| Valor de resize "sumiu" | Novo Pod criado a partir do template | Atualizar o Deployment |
 
 ## Aplicações (prévia)
 
