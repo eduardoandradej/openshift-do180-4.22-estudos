@@ -46,7 +46,10 @@ Cada capítulo em `capitulos/NN-nome/` contém:
 - Não executar exercícios oficiais nem criar scripts que reproduzam ou alterem a
   infraestrutura do treinamento.
 - Não criar avaliadores próprios dos laboratórios.
-- Não tornar o repositório público em nenhuma hipótese.
+- **Visibilidade:** o repositório é **público** por decisão explícita do usuário
+  (2026-10-26), substituindo a regra original de repositório privado. Todo conteúdo
+  precisa ser seguro para leitura pública: nada de PDF, extrações, trechos extensos
+  da apostila, senhas do laboratório, credenciais, dados da assinatura ou dados pessoais.
 - O `.gitignore` bloqueia `*.pdf`, `*token*`, `*secret*.yaml` etc. Exemplos de
   Secret devem ficar dentro de Markdown com valores fictícios.
 

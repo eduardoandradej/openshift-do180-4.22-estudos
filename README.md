@@ -96,5 +96,6 @@ entre o que é estudado aqui e os objetivos públicos do exame está em
 
 ## Aviso
 
-Material de estudo pessoal. Red Hat, OpenShift e nomes relacionados são marcas da
+Repositório **público** de estudo pessoal. Ele não contém o PDF do curso, extrações
+de texto, soluções de laboratório nem credenciais. Red Hat, OpenShift e nomes relacionados são marcas da
 Red Hat, Inc. O conteúdo oficial do curso pertence à Red Hat e não está incluído aqui.
