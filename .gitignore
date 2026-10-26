@@ -1,0 +1,54 @@
+# ---------------------------------------------------------------
+# Material oficial e restrito — NUNCA versionar
+# ---------------------------------------------------------------
+*.pdf
+*.PDF
+*.epub
+DO180*
+DO280*
+EX280*
+# Extrações de texto/imagens de apostilas
+*-extraido.txt
+*.extracted.txt
+extracao/
+extracted/
+material-oficial/
+material-local/
+pdfs/
+
+# ---------------------------------------------------------------
+# Credenciais, segredos e acesso a clusters
+# ---------------------------------------------------------------
+.env
+.env.*
+*.env
+kubeconfig
+kubeconfig*
+.kube/
+*.kubeconfig
+auth/
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+*token*
+*secret*.yaml
+*secret*.yml
+pull-secret*
+install-config*.yaml
+*.ovpn
+
+# ---------------------------------------------------------------
+# Sistema / editores
+# ---------------------------------------------------------------
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.vscode/
+.idea/
+*.log
+tmp/
