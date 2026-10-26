@@ -1,6 +1,6 @@
 # Comandos `oc` por tarefa
 
-> Cobertura atual: fundamentos e Capítulos 1–2. Ampliada a cada capítulo.
+> Cobertura atual: fundamentos e Capítulos 1–3. Ampliada a cada capítulo.
 > Coluna **Perm.**: 👤 qualquer usuário autenticado · 🛡️ administrador do cluster.
 
 ## Sessão e contexto
@@ -91,7 +91,50 @@
 | `oc adm must-gather --dest-dir <dir>` | Coleta para suporte | 2.5 |
 | `oc adm inspect clusteroperator/<x> --since 10m --dest-dir <dir>` | Coleta de um componente | 2.5 |
 
-## Aplicações (prévia; aprofundado nos capítulos 3–7)
+## Pods e containers ([3.1](../capitulos/03-containers-e-pods/3.1-criar-containers-e-pods.md), [3.5](../capitulos/03-containers-e-pods/3.5-diagnosticar-containers-e-pods.md))
+
+| Comando | Para quê |
+|---------|----------|
+| `oc run <n> --image <img> [--env K=V]` | Criar Pod avulso |
+| `oc run <n> -it --rm --restart Never --image <img> --command -- <cmd>` | Comando pontual, Pod apagado ao final |
+| `oc describe project <p> \| grep scc` | Faixas de UID/GID do projeto |
+| `oc exec <pod> [-c <c>] -- <cmd>` | Comando no container |
+| `oc exec -it <pod> -- bash -il` | Shell interativo |
+| `oc rsh [-c <c>] <pod>` | Shell remoto |
+| `oc attach <pod> -it` | Conectar ao processo principal |
+| `oc logs <pod> [-f] [-p] [--tail N] [-c <c>]` | Logs (atual ou instância anterior) |
+| `oc delete pod <n> [--grace-period N\|--now\|--force]` | Apagar Pod |
+| `oc delete pod -l <label>` / `oc delete pods --all` | Apagar por label / todos |
+| `oc edit pod <n>` | Editar no editor (`KUBE_EDITOR`) |
+| `oc patch pod <n> --type=json -p '[{"op":"replace","path":"/spec/containers/0/image","value":"<img>"}]'` | Trocar imagem |
+| `oc cp <orig> <pod>:<dest> [-c <c>]` | Copiar arquivos (precisa de `tar`) |
+| `oc rsync <pod>:<dir> <local>` | Sincronizar diretórios |
+| `oc port-forward pod/<n> <local>:<remota>` | Túnel temporário até o Pod |
+
+## No nó, como administrador ([3.1](../capitulos/03-containers-e-pods/3.1-criar-containers-e-pods.md))
+
+| Comando | Para quê |
+|---------|----------|
+| `crictl ps --name <c>` | Container em execução |
+| `crictl inspect -o json <id> \| jq .info.pid` | PID do container |
+| `crictl pods` / `crictl images` / `crictl logs <id>` | Pods, imagens, logs no nó |
+| `lsns -p <PID>` | Namespaces do processo |
+| `nsenter -t <PID> -p -r <cmd>` / `-a` | Entrar no namespace PID / em todos |
+
+## Imagens ([3.3](../capitulos/03-containers-e-pods/3.3-encontrar-e-inspecionar-imagens.md))
+
+| Comando | Para quê |
+|---------|----------|
+| `skopeo login <registry>` | Autenticar no registry |
+| `skopeo list-tags docker://<repo>` | Tags disponíveis |
+| `skopeo inspect [--config] docker://<img>` | Digest, tags, User, Env, Entrypoint, Cmd |
+| `skopeo copy docker://<a> docker://<b>` | Copiar imagem |
+| `skopeo sync --src docker --dest docker <a> <b>` | Sincronizar repositório |
+| `oc image info <img> [--filter-by-os amd64]` | Informações da imagem |
+| `oc image extract <img> --path <orig>:<dest>` | Extrair arquivos sem rodar |
+| `oc image mirror <a> <b>` | Espelhar entre registries |
+
+## Aplicações (prévia; aprofundado nos capítulos 4–7)
 
 | Comando | Para quê |
 |---------|----------|

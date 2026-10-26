@@ -22,6 +22,8 @@ OpenShift; a documentação de Kubernetes continua válida trocando `kubectl` po
 | `oc expose` (para Route) | Criar Route | Route é recurso OpenShift |
 | `oc start-build`, `oc set triggers` | Builds e triggers de imagem | Recursos OpenShift |
 | `oc adm ...` | Administração do cluster (`top`, `node-logs`, `must-gather`, `policy`) | Ferramentas da plataforma |
+| `oc rsh` / `oc rsync` | Shell remoto / sincronizar arquivos com containers | Atalhos do OpenShift (`kubectl exec -it` e `kubectl cp` são os equivalentes mais próximos) |
+| `oc image ...` | Inspecionar, extrair e espelhar imagens | Ferramenta de imagens do OpenShift |
 
 ## Equivalências úteis
 

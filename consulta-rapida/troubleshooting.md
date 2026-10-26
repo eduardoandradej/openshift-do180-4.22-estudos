@@ -1,6 +1,6 @@
 # Troubleshooting: sintoma → causa → verificação
 
-> Cobertura atual: fundamentos e Capítulos 1–2. Ampliado nos capítulos 3, 4 e 6.
+> Cobertura atual: fundamentos e Capítulos 1–3. Ampliado nos capítulos 4 e 6.
 
 ## Acesso e CLI
 
@@ -26,6 +26,21 @@
 | `oc adm top`: `metrics not available yet` | Pod recém-criado ou monitoramento degradado | Aguardar; `oc get co monitoring` |
 | Script com `oc describe` quebrou após atualização | Formato do `describe` mudou | Usar `-o json`/`jsonpath`/`custom-columns` |
 | `oc logs` pede um container | Pod com vários containers | `-c <container>` |
+
+## Pods e imagens ([3.5](../capitulos/03-containers-e-pods/3.5-diagnosticar-containers-e-pods.md))
+
+| Sintoma | Causa provável | Como verificar |
+|---------|----------------|----------------|
+| `ErrImagePull` / `ImagePullBackOff` com `manifest unknown` | Tag ou repositório inexistente | `skopeo list-tags docker://<repo>` |
+| `ImagePullBackOff` com `unauthorized` | Registry exige credencial | `oc describe pod`; credenciais do registry |
+| `CrashLoopBackOff` com comando curto | `restartPolicy: Always` reinicia um processo que terminou com sucesso | Usar `--restart Never` ou um Job |
+| `CrashLoopBackOff` com `Permission denied` | Imagem espera root; OpenShift roda com UID aleatório e GID 0 | `oc logs --previous`; `skopeo inspect --config` (`User`); `oc debug` + `ls -ld` |
+| Falha ao escutar na porta 80/443 | Usuário não root não usa portas < 1024 | Usar imagem que escuta em 8080/8443 |
+| `CreateContainerConfigError` | ConfigMap/Secret referenciado não existe | `oc describe pod` |
+| `oc edit pod` recusa a alteração | Campo imutável do Pod (só a imagem muda) | Recriar o Pod ou usar Deployment |
+| `oc cp` falha com erro de `tar` | Imagem sem `tar` | `oc rsync`, `oc exec -i ... cat >`, ou incluir na imagem |
+| `port-forward`: `address already in use` | Porta local ocupada | Outra porta local (`18080:8080`) |
+| `skopeo`: `Invalid image name` | Faltou o transporte | Prefixo `docker://` |
 
 ## Aplicações (prévia)
 

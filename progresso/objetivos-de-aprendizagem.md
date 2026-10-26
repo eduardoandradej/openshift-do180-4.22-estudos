@@ -62,7 +62,17 @@
 | Avaliar operators, nós, Pods, métricas, eventos e alertas | [2.5](../capitulos/02-cli-e-apis/2.5-avaliar-a-saude-do-cluster.md) | Diagnóstico de cluster e aplicações (🔎) |
 | Coletar dados para suporte (`must-gather`, `inspect`) | 2.5 | Diagnóstico (🔎) |
 
-## 5. Competências dos próximos capítulos
+## 5. Competências do Capítulo 3 (✅ confirmadas no PDF)
+
+| Competência | Lição | Relevância para EX280 |
+|-------------|-------|-----------------------|
+| Criar Pods com `oc run`, controlar comando, variáveis e reinício | [3.1](../capitulos/03-containers-e-pods/3.1-criar-containers-e-pods.md) | Implantar e testar aplicações (🔎) |
+| Entender UIDs por projeto, GID 0, PSA e SCC | 3.1 | Base para segurança de aplicações (🔎, aprofundado no DO280) |
+| Inspecionar o container no nó (`crictl`, `lsns`, `nsenter`) | 3.1 | ➕ Diagnóstico avançado |
+| Encontrar e inspecionar imagens (`skopeo`, `oc image`) | [3.3](../capitulos/03-containers-e-pods/3.3-encontrar-e-inspecionar-imagens.md) | Escolher e validar imagens (🔎) |
+| Diagnosticar Pods: logs, eventos, exec, cp, port-forward, edit/patch | [3.5](../capitulos/03-containers-e-pods/3.5-diagnosticar-containers-e-pods.md) | Diagnóstico de aplicações (🔎) |
+
+## 6. Competências dos próximos capítulos
 
 Serão adicionadas aqui à medida que cada PDF for recebido e cada capítulo validado.
 

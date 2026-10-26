@@ -41,7 +41,7 @@ flowchart LR
 | [01 — Fundamentos essenciais](01-fundamentos-essenciais/README.md) | Containers, Kubernetes, OpenShift, API, redes, storage, ferramentas | ✅ |
 | [Capítulo 1](capitulos/01-introducao-kubernetes-openshift/README.md) | Introduction to Kubernetes and OpenShift | ✅ |
 | [Capítulo 2](capitulos/02-cli-e-apis/README.md) | Kubernetes and OpenShift Command-line Interfaces and APIs | ✅ |
-| [Capítulo 3](capitulos/03-containers-e-pods/README.md) | Run Applications as Containers and Pods | ⏳ |
+| [Capítulo 3](capitulos/03-containers-e-pods/README.md) | Run Applications as Containers and Pods | ✅ |
 | [Capítulo 4](capitulos/04-deploy-e-redes/README.md) | Deploy Managed and Networked Applications on Kubernetes | ⏳ |
 | [Capítulo 5](capitulos/05-configuracao-e-storage/README.md) | Manage Storage for Application Configuration and Data | ⏳ |
 | [Capítulo 6](capitulos/06-confiabilidade/README.md) | Configure Applications for Reliability | ⏳ |

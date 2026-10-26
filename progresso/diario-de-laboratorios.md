@@ -30,6 +30,10 @@ credenciais.
 | 2.4 | GE `cli-resources` | | | |
 | 2.6 | GE `cli-health` | | | |
 | 2.7 | Lab `cli-review` (grade) + Quiz 2.8 | | | |
+| 3.2 | GE `pods-containers` | | | |
+| 3.4 | GE `pods-images` | | | |
+| 3.6 | GE `pods-troubleshooting` | | | |
+| 3.7 | Lab `pods-review` (grade) + Quiz 3.8 | | | |
 
 ## Entradas
 

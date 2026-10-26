@@ -46,8 +46,17 @@ escrito) está em [estado-do-projeto.md](estado-do-projeto.md).
 - [ ] REVISAO.md
 - [ ] RESUMO.md
 
-## Capítulo 3 — Run Applications as Containers and Pods (conteúdo pendente)
-- [ ] 3.1 · [ ] 3.2 GE · [ ] 3.3 · [ ] 3.4 GE · [ ] 3.5 · [ ] 3.6 GE · [ ] 3.7 Lab · [ ] 3.8 Quiz
+## Capítulo 3 — Run Applications as Containers and Pods
+- [ ] 3.1 Create Linux Containers and Kubernetes Pods
+- [ ] 3.2 GE `pods-containers`
+- [ ] 3.3 Find and Inspect Container Images
+- [ ] 3.4 GE `pods-images`
+- [ ] 3.5 Troubleshoot Containers and Pods
+- [ ] 3.6 GE `pods-troubleshooting`
+- [ ] 3.7 Lab `pods-review` (`lab grade`)
+- [ ] 3.8 Quiz
+- [ ] REVISAO.md
+- [ ] RESUMO.md
 
 ## Capítulo 4 — Deploy Managed and Networked Applications on Kubernetes (conteúdo pendente)
 - [ ] 4.1 · [ ] 4.2 GE · [ ] 4.3 · [ ] 4.4 GE · [ ] 4.5 · [ ] 4.6 GE · [ ] 4.7 · [ ] 4.8 GE · [ ] 4.9 Lab
